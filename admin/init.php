@@ -310,6 +310,16 @@ function reviews_list()
 	return query($sql);
 }
 
+function reviews_list_more($limit)
+{
+	$sql	= "SELECT *
+				FROM tbl_reviews
+				WHERE is_active = '1'
+				ORDER BY id ASC LIMIT $limit";
+	
+	return query($sql);
+}
+
 function product_detail($id)
 {	
 	$wheres[] = "id = '{$id}'";

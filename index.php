@@ -136,7 +136,7 @@
                                                     <div class="col-md-6">
                                                         <div class="img-shadow">
                                                             <a class="popup-youtube"
-                                                                href="'.$_frame->link.'">
+                                                                href="'.$_frame->link.'?autoplay=1">
 
                                                                 <img src="images/index1.jpg" class="img-responsive">
                                                             </a>
@@ -275,6 +275,7 @@
                 removalDelay: 160,
                 preloader: false,
                 fixedContentPos: false,
+                
             });
         });
     </script>

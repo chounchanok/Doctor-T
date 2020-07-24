@@ -146,6 +146,7 @@
                             </div>
                         </a>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
 
                         <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
@@ -165,6 +166,11 @@
                             </div>
                         </a>
                     </div>
+
+                    <input type="hidden" id="count_query" value="6" />
+
+                    <div class="show_more row"></div>
+
                     <div class="col-lg-12 text-center">
                         <button class="button-showmore">Show more</button>
                     </div>
@@ -185,6 +191,27 @@
     <script src="js/custom.js"></script>
     <script src="js/script.js"></script>
     <script>
+        $(document).ready(function(){
+
+            $('.button-showmore').click(function(){
+                var start = $('#count_query').val();
+                var limit = 6;
+                $.ajax({
+                    url: 'admin/ajaxquery_review.php',
+                    data: { 'start' : start , 'limit' : limit },
+                    method: 'POST',
+                    dataType: 'html',
+                    success:function(resp){
+                        console.log(resp);
+                        $('.show_more').append(resp);
+                        $('#count_query').val( parseInt(start) + parseInt(limit) );
+                    }
+                });
+                // console.log(start , limit);
+            });
+            
+
+        });
         $(function() {
             $('.popup-youtube').magnificPopup({
                 disableOn: 700,
