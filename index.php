@@ -136,7 +136,7 @@
                                                     <div class="col-md-6">
                                                         <div class="img-shadow">
                                                             <a class="popup-youtube"
-                                                                href="'.$_frame->link1.'">
+                                                                href="'.$_frame->link.'">
 
                                                                 <img src="images/index1.jpg" class="img-responsive">
                                                             </a>
