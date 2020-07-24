@@ -763,7 +763,7 @@
     <script>
         $(document).click(function (e) {
             if (!$(e.target).is('.panel-body')) {
-                $('.collapse').collapse('hide');
+                $('.collapse').collapse('hide').slideUp();
             }
         });
         // function openCity(evt, cityName) {
