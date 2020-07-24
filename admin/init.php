@@ -177,6 +177,16 @@ function slide_add() {
 	return $added;
 }
 
+function reviews_list_more($limit)
+{
+ $sql = "SELECT *
+    FROM tbl_reviews
+    WHERE is_active = '1'
+    ORDER BY id ASC LIMIT $limit";
+ 
+ return query($sql);
+}
+
 function slide_edit() {
 	$slide_id 	= $_POST['slide_id'];
 
