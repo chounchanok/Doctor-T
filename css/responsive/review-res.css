@@ -1,0 +1,92 @@
+@media (max-width: 1024px) {
+    .content-review h4 {
+        color: #0e2849;
+        font-weight: bolder;
+        font-family: 'nexa_boldregular';
+        margin-bottom: -10px;
+        font-size: .9rem;
+    }
+    .review-detail p {
+        font-family: 'psl_kanda_proregular', 'nexa_lightregular';
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 1rem;
+    }
+    .button-showmore {
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+        padding: 4px 10px;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        border: 3px solid #0e2947;
+        outline: none;
+        color: #0e2947;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .detail-review h5 {
+        line-height: 2rem;
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #000;
+        font-family: 'psl_kanda_proregular';
+    }
+    .detail-review h2 {
+        font-weight: normal;
+        color: #0e2849;
+        margin-bottom: -15px;
+        font-family: 'nexa_boldregular';
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-detail p {
+        font-family: 'psl_kanda_proregular', 'nexa_lightregular';
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-review h1 {
+        margin-bottom: 0;
+        font-weight: bolder;
+        color: #fff;
+        font-size: 1.4rem;
+    }
+    .content-review h4 {
+        color: #0e2849;
+        font-weight: bolder;
+        font-family: 'nexa_boldregular';
+        margin-bottom: -10px;
+        font-size: 1.2rem;
+    }
+    .review-detail p {
+        font-family: 'psl_kanda_proregular', 'nexa_lightregular';
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 1.4rem;
+    }
+    .detail-review h2 {
+        font-weight: normal;
+        color: #0e2849;
+        margin-bottom: -15px;
+        font-family: 'nexa_boldregular';
+        font-size: 1.4rem;
+    }
+    .detail-review h5 {
+        line-height: 2rem;
+        font-size: 1.6rem;
+        font-weight: normal;
+        color: #000;
+        font-family: 'psl_kanda_proregular';
+    }
+}

@@ -1,0 +1,28 @@
+body {
+	padding-top: 0;
+}
+
+.brand-img {
+	width: 80%;
+	background-color: white;
+}
+
+.page-login:before {
+  	/*background-image: url("../images/poster.jpg");*/
+  	background-color: #ccc;
+}
+
+form {
+  	width: 340px;
+  	margin: 30px auto;
+}
+
+.page-login form a {
+  	margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+  .page-login form {
+    width: auto;
+  }
+}

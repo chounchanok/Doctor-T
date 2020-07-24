@@ -1,0 +1,263 @@
+@media (max-width: 1024px) {
+    .about-detail-header h2 {
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0px;
+        font-size: 1.3rem;
+    }
+    .about-detail-header h2>strong {
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+    }
+    .about-detail-header p {
+        color: #fff;
+        font-family: 'nexa_lightregular';
+        margin-bottom: 5px;
+        font-size: .8rem;
+    }
+    .about-detail-header h5 {
+        font-weight: normal;
+        color: #fff;
+        /* font-family: 'psl_kanda_proregular'; */
+        line-height: 1.2rem;
+        font-size: .8rem;
+    }
+    .img-doctor-2 {
+        width: 120%;
+        margin-left: -3rem;
+    }
+    .detail-abouts h2 {
+        font-family: 'psl_kanda_proregular';
+        font-weight: bolder;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        margin-bottom: 0px;
+        margin-top: -8px;
+    }
+    .detail-abouts h1 {
+        font-weight: bolder;
+        font-size: 2em;
+        letter-spacing: 2px;
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        line-height: 2rem;
+        margin-bottom: 5px;
+        text-shadow: 2px 5px 8px #666666a9;
+    }
+    .tab-bluedark h1 {
+        color: #fff;
+        font-size: 1.3rem;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0;
+        letter-spacing: 2px;
+    }
+    .detail-abouts img {
+        float: left;
+        margin-right: 25px;
+        width: 65px;
+    }
+    .tab-bluedark {
+        text-align: center;
+        background-color: #0e2849;
+        width: fit-content;
+        padding: 5px 15px 0px;
+        margin-top: -15px;
+    }
+    .detail-about-3 h3 {
+        color: #279ebe;
+        font-family: 'nexa_boldregular';
+        font-size: 1.1rem;
+    }
+    .detail-about-3 h5 {
+        color: #000;
+        font-size: 1rem;
+        font-weight: lighter;
+        line-height: 1rem;
+    }
+    .img-office {
+        width: 195%;
+        margin-left: -8rem;
+    }
+    .abo-img {
+        width: 230px;
+    }
+    .abo-detail h2 {
+        color: #fff;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .abo-detail h5 {
+        color: #fff;
+        font-weight: lighter;
+        line-height: 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-detail-header h1 {
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        margin-bottom: -5px;
+    }
+    .about-detail-header h2 {
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0px;
+        font-size: 1rem;
+    }
+    .button-readmore-about {
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+        padding: 0px 6px;
+        font-size: .8rem;
+        font-weight: bolder;
+        border: 3px solid #fff;
+        outline: none;
+        color: #fff;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .about-detail-header h2>strong {
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 15px;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    .about-detail-header h5 {
+        font-weight: normal;
+        color: #fff;
+        /* font-family: 'psl_kanda_proregular'; */
+        line-height: 1rem;
+        font-size: .8rem;
+    }
+    .img-doctor-2 {
+        width: 150%;
+        margin-left: -8rem;
+    }
+    .tab-bluedark h1 {
+        color: #fff;
+        font-size: 1rem;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0;
+        letter-spacing: 2px;
+    }
+    .detail-abouts h1 {
+        font-weight: bolder;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        color: #fff;
+        font-family: 'nexa_boldregular';
+        line-height: 1.5rem;
+        margin-bottom: 5px;
+        text-shadow: 2px 5px 8px #666666a9;
+    }
+    .tab-bluedark {
+        text-align: center;
+        background-color: #0e2849;
+        width: fit-content;
+        padding: 0px 10px 0px;
+        margin-top: -15px;
+    }
+    .detail-about-3 h3 {
+        color: #279ebe;
+        font-family: 'nexa_boldregular';
+        font-size: 1rem;
+        line-height: 1.1rem;
+        margin-bottom: 15px;
+    }
+    .detail-about-3 h5 {
+        color: #000;
+        font-size: .8rem;
+        font-weight: lighter;
+        line-height: 1rem;
+    }
+    .detail-about-3 h4 {
+        color: #0e2947;
+        font-size: .8rem;
+        font-weight: normal;
+        font-family: 'nexa_boldregular';
+    }
+    .detail-abouts img {
+        float: left;
+        margin-right: 25px;
+        width: 60px;
+    }
+    .detail-abouts h2 {
+        font-family: 'psl_kanda_proregular';
+        font-weight: bolder;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        margin-bottom: 0px;
+        margin-top: -8px;
+    }
+    .img-abo {
+        width: 150%;
+        margin-left: -7rem;
+    }
+    .abo-detail {
+        padding: 0rem 0;
+        margin-left: -7rem;
+    }
+    .abo-detail h2 {
+        color: #fff;
+        line-height: 1.2rem;
+        font-size: 1rem;
+    }
+    .abo-detail h5 {
+        color: #fff;
+        font-weight: lighter;
+        line-height: 1rem;
+        font-size: .8rem;
+    }
+    .abo-detail h2 {
+        color: #fff;
+        line-height: 1.2rem;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .abo-ip {
+        width: 150%;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-doctor-2 {
+        width: 100%;
+        margin-left: 0;
+    }
+    .about-detail-header {
+        margin-left: 0;
+        padding: 1rem 0;
+    }
+    .img-office {
+        width: 100%;
+        margin-left: 0;
+    }
+    .img-abo {
+        width: 100%;
+        margin-left: 0;
+    }
+    .abo-detail {
+        padding: 0rem 0;
+        margin-left: 0;
+    }
+    .abo-ip {
+        width: 50%;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    .orange-hr {
+        border: 1px solid #f47d21;
+        margin-left: 0;
+    }
+}

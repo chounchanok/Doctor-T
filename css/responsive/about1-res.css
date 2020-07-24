@@ -1,0 +1,24 @@
+@media (max-width: 1024px) {
+    .video-width {
+        width: 100%;
+        height: 450px;
+        margin-bottom: -8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .padding-bottom-30-ip {
+        padding-bottom: 30px;
+    }
+    .video-width {
+        width: 100%;
+        height: 350px;
+        margin-bottom: -8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .padding-bottom-30-mb {
+        margin-bottom: 30px;
+    }
+}

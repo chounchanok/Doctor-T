@@ -1,0 +1,15 @@
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+    .orage-head th {
+        font-family: 'psl_kandaextra_proregular';
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: lighter;
+    }
+    .table-services tr>td {
+        font-size: 1.3rem;
+    }
+}

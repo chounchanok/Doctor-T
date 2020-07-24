@@ -1,0 +1,19 @@
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteEngine On
+RewriteRule ^cars/(.*)/(.*)$ car-detail.php?id=$1&url_name=$2
+RewriteRule ^motocycles/(.*)/(.*)$ motocycle-detail.php?id=$1&url_name=$2
+RewriteRule ^others/(.*)/(.*)$ other-detail.php?id=$1&url_name=$2
+RewriteRule ^accessory/(.*)/(.*)$ accessories-detail?id=$1&url_name=$2
+RewriteRule ^postcar/(.*)/(.*)$ allvehicles-detail.php?id=$1&url_name=$2
+RewriteRule ^postmotocycle/(.*)/(.*)$ allvehiclesm-detail.php?id=$1&url_name=$2

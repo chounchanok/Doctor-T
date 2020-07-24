@@ -1,0 +1,153 @@
+@media (max-width: 1024px) {
+    .about-backblue h1 {
+        color: #fb9f1a;
+        font-weight: 600;
+        font-family: 'nexa_boldregular';
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    .about-backblue h2 {
+        /* color: #fb9f1a; */
+        font-weight: normal;
+        color: #fff;
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+    }
+    .duoble-img {
+        width: 30px;
+        margin-top: 10px;
+    }
+    .img-about22-detail h2 {
+        color: #f69e23;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0px;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+    .img-about22-detail h3 {
+        color: #fff;
+        margin-bottom: 0;
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .about-backblue-2 h3 {
+        font-weight: normal;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .detail-grey h3 {
+        color: #fff;
+        font-weight: lighter;
+        font-size: 1rem;
+        margin-top: 0;
+        line-height: 1.3rem;
+    }
+    .detail-white h3 {
+        color: #000;
+        font-weight: lighter;
+        font-size: 1rem;
+        margin-top: 0;
+        line-height: 1.5rem;
+    }
+    .img-s {
+        width: 50%;
+    }
+    .detail-doctor h3 {
+        color: #fff;
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .img-about22-detail h2 {
+        color: #f69e23;
+        font-family: 'nexa_boldregular';
+        margin-bottom: 0px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    .duoble-img {
+        width: 20px;
+        margin-top: 0px;
+    }
+    .img-about22-detail h3 {
+        color: #fff;
+        margin-bottom: 0;
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    .about-backblue-2 h3 {
+        font-weight: normal;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    .detail-white h3 {
+        color: #000;
+        font-weight: lighter;
+        font-size: 1rem;
+        margin-top: 0;
+        line-height: 1.2rem;
+    }
+    .img-doctor {
+        width: 150%;
+        margin-left: -5rem;
+    }
+    .detail-doctor h3 {
+        color: #fff;
+        font-weight: lighter;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-backblue h2 {
+        /* color: #fb9f1a; */
+        font-weight: normal;
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+    .about-backblue h1 {
+        color: #fb9f1a;
+        font-weight: 600;
+        font-family: 'nexa_boldregular';
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .img-about22-detail {
+        margin: auto;
+        padding: 1rem 0;
+    }
+    .detail-white {
+        padding: 1rem 0;
+    }
+    .duoble-black {
+        width: 20px;
+        margin-top: -10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .textwrap-left {
+        float: left;
+        margin: 15px;
+    }
+    .textwrap-right {
+        float: right;
+        margin: 15px;
+    }
+    .blue-doctor {
+        background-color: #0d4880;
+        padding: 1rem 0;
+    }
+    .img-doctor {
+        width: 100%;
+        margin-left: 0;
+    }
+}

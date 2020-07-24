@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Site Metas -->
+    <title>Before / After | Doctor T Dental Clinic</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/logodrt.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/logodrt.png">
+    <!-- Design fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">  -->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- FontAwesome Icons core CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <!-- Responsive styles for this template -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <!-- Colors for this template -->
+    <link href="css/colors.css" rel="stylesheet">
+    <!-- Version Garden CSS for this template -->
+    <link href="css/version/garden.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+    <link rel='stylesheet' href='css/owl.carousel.min.css'>
+    <!-- responsive -->
+    <link href="css/responsive/before-res.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <?php 
+            $current_file = basename(__FILE__,'.php');
+            include 'header.php';
+        ?>
+        <section class="header-index">
+            <div class="owl-slider">
+                <div id="banner-slidebefore" class="owl-carousel">
+                    <div class="item">
+                        <a href="">
+                            <img src="images/teeth.jpg" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="teeth-white">
+            
+            <div class="tab-blue-before">
+                <div class="container">
+                    <h1>Before / After</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="before-detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
+                            <img src="images/review.png" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="detail-review">
+                            <h2>MISS NAJDKD JFASJFJKSHDH </h2>
+                            <hr>
+                            <h5>รายงานการวิจัย ฉบับนี้เป็นหารนำเสนอข้อมูลที่ได้รวบรวมจากแหล่งต่างๆ ที่น่าเชื่อถือในเชิงวิเคราะห์ เพื่อต้องการเผยแพร่เพื่อประโยชน์ด้สนการแลกเปลี่ยนความรู้
+                                และประโยชน์แก่ส่วนรวม ไม่ได้เจตนาแนะนำข้อมูลเพื่อการวิจัยโรคหรือการรักษาโรค ตลอดจนไม่ใช่เพื่อการนำข้อมูลไปใช้ในเชิงพาณิชย์หรือเจตนาเอื้อ
+                                ผลประโยชน์ธุรกิจใดๆ ศูนย์วิจัยสุขภาพกรุงเทพ จึงไม่รับรองความถูกต้องครบถ้วน สมบูรณ์ และเป็นปัจจุบันของข้อมูลเกี่ยวกับยา โรค สาเหตุ อาการ
+                                วิธีการดูแลรักษา
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cat-grey">
+            <div class="container">
+                <div class="teeth-cat">
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id1')" src="images/catteeth/cat (1).png">
+                        <p>OVERHANG<br>TEETH<br>ฟันยื่น</p>
+                    </li>
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id2')" src="images/catteeth/cat (2).png">
+                        <p>XXXXXXXX<br>ปากอูม<br><br></p>
+                    </li>
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id3')" src="images/catteeth/cat (3).png">
+                        <p>XXXXXXXX<br>ฟันล่างคร่อมบน<br><br></p>
+                    </li>
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id4')" src="images/catteeth/cat (4).png">
+                        <p>XXXXXXXX<br>ฟันขึ้นเก<br><br></p>
+                    </li>
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id5')" src="images/catteeth/cat (5).png">
+                        <p>XXXXXXXX<br>ฟันหายบางซี่<br><br></p>
+                    </li>
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id6')" src="images/catteeth/cat (6).png">
+                        <p>XXXXXXXX<br>เขี้ยวอยู่สูง,<br class="show-ip">ฟันฝัง<br></p>
+                    </li>
+                    <li>
+                        <img class="tablinks" onclick="openCity(event, 'id7')" src="images/catteeth/cat (7).png">
+                        <p>OTHER<br>อื่นๆ<br><br></p>
+                    </li>
+                </div>
+            </div>
+        </section>
+        <section class="cat-grey-detail tabcontent" id="id1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>OVERHANG TEETH</h1>
+                            <h2>ฟันยื่น</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cat-grey-detail tabcontent" id="id2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>XXXXXXXXX</h1>
+                            <h2>ปากอูม</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cat-grey-detail tabcontent" id="id2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>XXXXXXXXX</h1>
+                            <h2>ปากอูม</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="cat-grey-detail tabcontent" id="id3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>XXXXXXXXX</h1>
+                            <h2>ฟันล่างคร่อมบน</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cat-grey-detail tabcontent" id="id4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>XXXXXXXXX</h1>
+                            <h2>ฟันขึ้นเก</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cat-grey-detail tabcontent" id="id5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>XXXXXXXXX</h1>
+                            <h2>ฟันหายบางซี่</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cat-grey-detail tabcontent" id="id6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>XXXXXXXXX</h1>
+                            <h2>เขี้ยวอยู่สูง,ฟันฝัง</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cat-grey-detail tabcontent" id="id7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 padding-bottom-30">
+                        <hr class="blue-hr2">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="header-detail">
+                            <h1>OTHER</h1>
+                            <h2>อื่นๆ</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+<!-- //////////////////////////////// Default Open ///////////////////////////// -->
+        <section class="detail-teeth" id="defaultopen">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/review.png" class="img-responsive">
+                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="button-showmore">Show more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <?php 
+            include 'top-footer.php';
+            include 'footer.php';
+        ?>
+    </div><!-- end wrapper -->
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src='js/owl.carousel.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script  src="js/script.js"></script>
+
+    <script>
+        $(function() {
+            $('.popup-youtube').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false,
+            });
+        });
+    </script>
+    <script>
+        function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+        }
+        document.getElementById("defaultOpen").click();
+
+        // document.getElementByClassName("active").click(
+        //     document.getElementById(cityName).style.display = "none";
+        //     document.getElementById("defaultOpen").style.display = "block";
+        // );
+        document.getElementsByClassName("active").click(
+        
+        );
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".tablinks").click(function(){
+                $("#defaultopen").hide();
+                $(".blue-hr").hide();
+            });
+        });
+    </script>
+   
+</body>
+</html>
