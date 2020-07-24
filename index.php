@@ -113,7 +113,7 @@
 
                         for ($box=1; $box <= $count; $box++) { 
 
-                            echo '<div class="carousel-item '.($box = 1 ? 'active' : '').' ">
+                            echo '<div class="carousel-item '.($box == 1 ? 'active' : '').' ">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">';
@@ -127,7 +127,7 @@
                                         $end = $box*$limit;
                                         $frame = reviews_list_page($start.','.$end);
                                     }
-
+//ครีม
                                     if(!empty($frame)){
                                         foreach ($frame as $_frame) {
                                             echo '
