@@ -761,6 +761,17 @@
         });
     </script>
     <script>
+        $('.tablinks').click(function(){
+            var collp = $(this).attr('aria-expanded');
+            console.log(collp);
+            if($(this).attr('aria-expanded') == 'true'){
+                console.log('true');
+                $("#defaultopen").css('display','none');
+            }else{
+                console.log('false');
+                $("#defaultopen").css('display','block');
+            }
+        });
         $(document).click(function (e) {
             if (!$(e.target).is('.panel-body')) {
                 $('.collapse').collapse('hide');
@@ -791,12 +802,12 @@
         // };
     </script>
     <script>
-        $(document).ready(function () {
-            $(".tablinks").click(function () {
-                $("#defaultopen").hide();
-                $(".blue-hr").hide();
-            });
-        });
+        // $(document).ready(function () {
+            // $(".tablinks").click(function () {
+                // $("#defaultopen").hide();
+                // $(".blue-hr").hide();
+            // });
+        // });
     </script>
     <!-- <script>
         function ShowHide(divId) {
