@@ -115,14 +115,7 @@
 													?>
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
-			                  							<td style=""><?php echo $product_detail->name1; ?></td>
-			                  							<!-- <td style="">
-			                  								<?php if ($product_detail->is_recommend == '1') : ?>
-			                  									<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="pdChange(<?php echo $product_detail->id; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
-			                  								<?php else : ?>
-			                  									<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="pdChange(<?php echo $product_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
-			                  								<?php endif; ?>
-			                  							</td> -->
+			                  							<td style=""><?php echo $product_detail->name; ?></td>
 			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $product_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'reviews_edit.php?id=<?php echo $product_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>

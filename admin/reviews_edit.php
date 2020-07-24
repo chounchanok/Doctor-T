@@ -95,221 +95,23 @@
 			              	<form id="productEdit" name="productEdit" class="form-horizontal" method="post" enctype="multipart/form-data">
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="name">Name</label>
-				                  	<input type="text" class="form-control" id="name" name="name" placeholder="" value="<?php echo $product_detail->name1; ?>" required>
+				                  	<input type="text" class="form-control" id="name" name="name" placeholder="" value="<?php echo $product_detail->name; ?>" required>
 				                </div>
-				                <!-- <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="short_desc">Short Description</label>
-				                  	<input type="text" class="form-control" id="short_desc" name="short_desc" value="<?php echo $product_detail->short_desc; ?>">
-				                </div> -->
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description</label>
 									<textarea class="form-control summernote" rows="4" id="description" name="description">
-										<?php echo $product_detail->desc1; ?>
+										<?php echo $product_detail->desc; ?>
 									</textarea>
 								</div>
-								<!-- <div class="form-group form-material">
-									<label class="form-control-label" for="categories">Categories</label>
-									<select class="form-control" name="categories">
-										<?php $categories_list = categories_list(); ?>
-										<?php foreach ($categories_list as $categories_detail) : ?>
-										<option value="<?php echo $categories_detail->categories_id; ?>" <?php if($product_detail->categories == $categories_detail->categories_id){ echo 'selected'; } ?>><?php echo $categories_detail->categories_name; ?></option>
-										<?php endforeach ?>
-									</select>
-								</div> -->
-								<!-- <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="sub_cate">Sub Categories</label>
-				                  	<input type="text" class="form-control" id="sub_cate" name="sub_cate" value="<?php echo $product_detail->sub_categories; ?>">
-				                </div> -->
 								<div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="link_pdf">Link Youtube</label>
-				                  	<input type="text" class="form-control" id="link_pdf" name="link_pdf" value="<?php echo $product_detail->link1; ?>">
+				                  	<input type="text" class="form-control" id="link_pdf" name="link_pdf" value="<?php echo $product_detail->link; ?>">
 				                </div>
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover1; ?>" data-allowed-file-extensions="png jpg"/>
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
 									<p class="help-block"><i>Image size: 1400x600px</i></p>
 				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 2</label>
-				                  	<input type="text" class="form-control" id="name2" name="name2" placeholder="" value="<?php echo $product_detail->name2; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 2</label>
-									<textarea class="form-control summernote" rows="4" id="description2" name="description2">
-										<?php echo $product_detail->desc2; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 2</label>
-				                  	<input type="text" class="form-control" id="link_pdf2" name="link_pdf2" value="<?php echo $product_detail->link2; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg2" name="covImg2" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover2; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<!-- <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 3</label>
-				                  	<input type="text" class="form-control" id="name3" name="name3" placeholder="" value="<?php echo $product_detail->name3; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 3</label>
-									<textarea class="form-control summernote" rows="4" id="description3" name="description3">
-										<?php echo $product_detail->desc3; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 3</label>
-				                  	<input type="text" class="form-control" id="link_pdf3" name="link_pdf3" value="<?php echo $product_detail->link3; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg3" name="covImg3" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover3; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 4</label>
-				                  	<input type="text" class="form-control" id="name4" name="name4" placeholder="" value="<?php echo $product_detail->name4; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 4</label>
-									<textarea class="form-control summernote" rows="4" id="description4" name="description4">
-										<?php echo $product_detail->desc4; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 4</label>
-				                  	<input type="text" class="form-control" id="link_pdf4" name="link_pdf4" value="<?php echo $product_detail->link4; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg4" name="covImg4" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover4; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 5</label>
-				                  	<input type="text" class="form-control" id="name5" name="name5" placeholder="" value="<?php echo $product_detail->name5; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 5</label>
-									<textarea class="form-control summernote" rows="4" id="description5" name="description5">
-										<?php echo $product_detail->desc5; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 5</label>
-				                  	<input type="text" class="form-control" id="link_pdf5" name="link_pdf5" value="<?php echo $product_detail->link5; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg5" name="covImg5" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover5; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 6</label>
-				                  	<input type="text" class="form-control" id="name6" name="name6" placeholder="" value="<?php echo $product_detail->name6; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 6</label>
-									<textarea class="form-control summernote" rows="4" id="description6" name="description6">
-										<?php echo $product_detail->desc6; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 6</label>
-				                  	<input type="text" class="form-control" id="link_pdf6" name="link_pdf6" value="<?php echo $product_detail->link6; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg6" name="covImg6" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover6; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 7</label>
-				                  	<input type="text" class="form-control" id="name7" name="name7" placeholder="" value="<?php echo $product_detail->name7; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 7</label>
-									<textarea class="form-control summernote" rows="4" id="description7" name="description7">
-										<?php echo $product_detail->desc7; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 7</label>
-				                  	<input type="text" class="form-control" id="link_pdf7" name="link_pdf7" value="<?php echo $product_detail->link7; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg7" name="covImg7" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover7; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 8</label>
-				                  	<input type="text" class="form-control" id="name8" name="name8" placeholder="" value="<?php echo $product_detail->name8; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 8</label>
-									<textarea class="form-control summernote" rows="4" id="description8" name="description8">
-										<?php echo $product_detail->desc8; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 8</label>
-				                  	<input type="text" class="form-control" id="link_pdf8" name="link_pdf8" value="<?php echo $product_detail->link8; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg8" name="covImg8" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover8; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 9</label>
-				                  	<input type="text" class="form-control" id="name9" name="name9" placeholder="" value="<?php echo $product_detail->name9; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 9</label>
-									<textarea class="form-control summernote" rows="4" id="description9" name="description9">
-										<?php echo $product_detail->desc9; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 9</label>
-				                  	<input type="text" class="form-control" id="link_pdf9" name="link_pdf9" value="<?php echo $product_detail->link9; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg9" name="covImg9" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover9; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div>
-
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name 10</label>
-				                  	<input type="text" class="form-control" id="name10" name="name10" placeholder="" value="<?php echo $product_detail->name10; ?>">
-				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description 10</label>
-									<textarea class="form-control summernote" rows="4" id="description10" name="description10">
-										<?php echo $product_detail->desc10; ?>
-									</textarea>
-								</div>
-								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube 10</label>
-				                  	<input type="text" class="form-control" id="link_pdf2" name="link_pdf10" value="<?php echo $product_detail->link10; ?>">
-				                </div>
-								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg10" name="covImg10" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover10; ?>" data-allowed-file-extensions="png jpg"/>
-									<p class="help-block"><i>Image size: 1400x600px</i></p>
-				                </div> -->
-
 				                <div class="text-right">
 				                	<input type="hidden" name="product_id" value="<?php echo $product_detail->id; ?>">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
