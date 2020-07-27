@@ -15,7 +15,7 @@ foreach($review as $_review){
                 <div class="content-review">
                 <h4>'.$_review->name.'</h4>
                 <hr>
-                <p>'.$_review->dsc.'</p>
+                '.html_entity_decode($_review->dsc).'
             </div>
         </a>
     </div>    

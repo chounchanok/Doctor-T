@@ -70,13 +70,19 @@
                 <?php foreach ($review_detail1 as $review_list) : ?>
                     <div class="col-lg-4 col-md-6">
                             <a class="popup-youtube" href="<?php echo $review_list->link; ?>?autoplay=1">
-                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo (!empty($review_list->img_cover) ? $review_list->img_cover : ''); ?>" class="img-responsive">
+                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
                             </a>
                             <a href="review-detail?id=<?php echo $review_list->id; ?>">
                             <div class="content-review">
-                                <h4><?php echo (!empty($review_list->name) ? $review_list->name : ''); ?></h4>
+                            <?php 
+                                // $description = '';
+                                // $description_complete = '';
+                                // $description = str_replace('<p>','',$review_list->dsc); 
+                                // $description_complete = str_replace('</p>','',$description); 
+                            ?>
+                                <h4><?php echo $review_list->name; ?></h4>
                                 <hr>
-                                <p class="new_line"><?php echo (!empty($review_list->dsc) ? $review_list->dsc : ''); ?></p>
+                                <?php echo html_entity_decode($review_list->dsc); ?>
                             </div>
                         </a>
                     </div>
@@ -138,6 +144,7 @@
                 fixedContentPos: false,
             });
         });
+
     </script>
 </body>
 </html>
