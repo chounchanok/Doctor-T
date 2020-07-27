@@ -11,7 +11,7 @@ foreach($review as $_review){
         <a class="popup-youtube" href=" '.$_review->link.' ">
                 <img src="images/review_detail/'.$_review->id.'/'.$_review->img_cover.' " class="img-responsive">
             </a>
-            <a href="review-detail">
+            <a href="review-detail?id='.$_review->id.'">
                 <div class="content-review">
                 <h4>'.$_review->name.'</h4>
                 <hr>
