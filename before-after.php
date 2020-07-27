@@ -38,6 +38,15 @@
 
 </head>
 
+<style>
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+.collapse {  transition: height 0.01s; }  
+</style>
+
 <body>
 
     <div id="wrapper">
@@ -68,7 +77,7 @@
             <div class="container">
                 <div class="teeth-cat">
                     <li>
-                        <img class="tablinks" data-toggle="collapse" href="#id1" src="images/catteeth/cat (1).png">
+                        <img class="tablinks active" data-toggle="collapse" href="#id1" src="images/catteeth/cat (1).png">
                         <p>OVERHANG<br>TEETH<br>ฟันยื่น</p>
                     </li>
                     <li>
@@ -98,7 +107,8 @@
                 </div>
             </div>
         </section>
-        <section class="cat-grey-detail tabcontent" id="id1">
+
+        <section class="cat-grey-detail tabcontent" id="id1" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -173,7 +183,7 @@
             </div>
         </section>
 
-        <section class="cat-grey-detail tabcontent" id="id2">
+        <section class="cat-grey-detail tabcontent" id="id2" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -248,7 +258,7 @@
             </div>
         </section>
 
-        <section class="cat-grey-detail tabcontent" id="id2">
+        <section class="cat-grey-detail tabcontent" id="id2" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -322,9 +332,8 @@
                 </div>
             </div>
         </section>
-
-
-        <section class="cat-grey-detail tabcontent" id="id3">
+        
+        <section class="cat-grey-detail tabcontent" id="id3" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -399,7 +408,7 @@
             </div>
         </section>
 
-        <section class="cat-grey-detail tabcontent" id="id4">
+        <section class="cat-grey-detail tabcontent" id="id4" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -474,7 +483,7 @@
             </div>
         </section>
 
-        <section class="cat-grey-detail tabcontent" id="id5">
+        <section class="cat-grey-detail tabcontent" id="id5" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -549,7 +558,7 @@
             </div>
         </section>
 
-        <section class="cat-grey-detail tabcontent" id="id6">
+        <section class="cat-grey-detail tabcontent" id="id6" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -624,7 +633,7 @@
             </div>
         </section>
 
-        <section class="cat-grey-detail tabcontent" id="id7">
+        <section class="cat-grey-detail tabcontent" id="id7" style="margin-top: -5px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 padding-bottom-30">
@@ -699,9 +708,6 @@
             </div>
         </section>
 
-
-
-
         <!-- //////////////////////////////// Default Open ///////////////////////////// -->
         <section class="detail-teeth" id="defaultopen">
             <div class="container">
@@ -722,8 +728,6 @@
                                     รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
                             </div>
                     </div>
-
-
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -749,31 +753,37 @@
     <script src="js/script.js"></script>
 
     <script>
-        $(function () {
-            $('.popup-youtube').magnificPopup({
-                disableOn: 700,
-                type: 'iframe',
-                mainClass: 'mfp-fade',
-                removalDelay: 160,
-                preloader: false,
-                fixedContentPos: false,
-            });
-        });
+        // $(function () {
+        //     $('.popup-youtube').magnificPopup({
+        //         disableOn: 700,
+        //         type: 'iframe',
+        //         mainClass: 'mfp-fade',
+        //         removalDelay: 160,
+        //         preloader: false,
+        //         fixedContentPos: false,
+        //     });
+        // });
     </script>
     <script>
         $('.tablinks').click(function(){
-            var collp = $(this).attr('aria-expanded');
-            console.log(collp);
-            if($(this).attr('aria-expanded') == 'true'){
-                console.log('true');
-                $("#defaultopen").css('display','none');
-            }else{
-                console.log('false');
-                $("#defaultopen").css('display','block');
-            }
+            $('.tablinks').each(function(){
+                $(this).removeClass('active');
+            });
+            $(this).addClass('active');
+            // var collp = $(this).attr('aria-expanded');
+            // console.log($(this).is('active'));
+            // if($(this).is('active')){
+            //     console.log('true');
+            //     $("#defaultopen").css('display','none');
+            // }else{
+            //     console.log('false');
+            //     $("#defaultopen").css('display','block');
+            // }
         });
         $(document).click(function (e) {
             if (!$(e.target).is('.panel-body')) {
+
+                // console.log($(e.target));
                 $('.collapse').collapse('hide').slideUp();
             }
         });
