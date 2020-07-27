@@ -34,6 +34,13 @@
     <!-- responsive -->
     <link href="css/responsive/review-res.css" rel="stylesheet">
 
+    <style>
+        p.new_line {
+            width: calc(100% - -0.4em);
+            height: 2em;
+            content: '';
+        }
+    </style>
 
 </head>
 <body>
@@ -63,13 +70,13 @@
                 <?php foreach ($review_detail1 as $review_list) : ?>
                     <div class="col-lg-4 col-md-6">
                             <a class="popup-youtube" href="<?php echo $review_list->link; ?>?autoplay=1">
-                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
+                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo (!empty($review_list->img_cover) ? $review_list->img_cover : ''); ?>" class="img-responsive">
                             </a>
                             <a href="review-detail?id=<?php echo $review_list->id; ?>">
                             <div class="content-review">
-                                <h4><?php echo $review_list->name; ?></h4>
+                                <h4><?php echo (!empty($review_list->name) ? $review_list->name : ''); ?></h4>
                                 <hr>
-                                <p><?php echo $review_list->dsc; ?></p>
+                                <p class="new_line"><?php echo (!empty($review_list->dsc) ? $review_list->dsc : ''); ?></p>
                             </div>
                         </a>
                     </div>
