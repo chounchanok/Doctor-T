@@ -180,7 +180,7 @@ function slide_add() {
 function reviews_list_more($limit)
 {
  $sql = "SELECT *
-    FROM tbl_reviews
+    FROM tbl_reviews_detail
     WHERE is_active = '1'
     ORDER BY id ASC LIMIT $limit";
  
@@ -276,12 +276,12 @@ function cate_detail($id)
 }
 
 function cate_add() {
-	$created = date('Y-m-d H:i:s');
+	$created = date('Y-m-d');
 
 	$sql	 = "INSERT INTO tbl_categories
-				(categories_name, short_desc, create_date) 
+				(categories_name, create_date) 
 				VALUE 
-				('{$_POST['name']}', '{$_POST['short_desc']}', '{$created}')";
+				('{$_POST['name']}', '{$created}')";
 	// exit;
 	$added = query($sql);
 
@@ -289,10 +289,10 @@ function cate_add() {
 }
 
 function cate_edit() {
-	$update_date = date('Y-m-d H:i:s');
+	$update_date = date('Y-m-d');
 
 	$sql	 = "UPDATE tbl_categories
-					SET categories_name = '{$_POST['name']}', short_desc = '{$_POST['short_desc']}', update_date = '{$update_date}'
+					SET categories_name = '{$_POST['name']}', update_date = '{$update_date}'
 					WHERE categories_id = '{$_POST['categories_id']}'";
 	// exit;
 	$updated = query($sql);
@@ -310,10 +310,30 @@ function product_list()
 	return query($sql);
 }
 
+function before_after_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
 function reviews_list()
 {
 	$sql	= "SELECT *
 				FROM tbl_reviews
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function review_detail_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_reviews_detail
 				WHERE is_active = '1'
 				ORDER BY id ASC";
 	
@@ -336,7 +356,7 @@ function product_detail($id)
 }
 
 function product_add() {
-	$created = date('Y-m-d H:i:s');
+	$created = date('Y-m-d');
 	// print_r ($_POST);
 	$description = htmlspecialchars($_POST['description']);
 	$name = $_POST['name'];
@@ -398,6 +418,149 @@ function product_add() {
 				$targetFile 	= $file_path;
 
 				$sql = "UPDATE tbl_reviews SET img_cover = '{$file_name}' WHERE id = '{$product_id}'";
+				
+				query($sql);
+			}
+		}
+	}
+	return $added;
+}
+
+function before_after_detail_add() {
+	$created = date('Y-m-d');
+	// print_r ($_POST);
+	$description = htmlspecialchars($_POST['description']);
+	$name = $_POST['name'];
+	$link = htmlspecialchars($_POST['link_pdf']);
+	$cate = $_POST['categories'];
+
+	$sql = "INSERT INTO `tbl_before_after_detail`(`name`, `dsc`, `link`, `categories`, `create_date`) VALUES ('{$name}','{$description}','{$link}','{$cate}','{$created}')";
+	
+	// print_r ($sql);
+		
+	// 	exit;
+	// exit;
+	$added = query($sql);
+
+	if(!empty($added))
+	{
+		global $db_connected;
+
+		$product_id = mysqli_insert_id($db_connected);
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../images/before_after/' . $product_id . '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
+			
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
+
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
+
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $storage_path . $file_name;
+					
+					$number++;
+				}
+			}
+
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+
+			if($moved)
+			{
+				$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
+
+				$sql = "UPDATE tbl_before_after_detail SET img_cover = '{$file_name}' WHERE id = '{$product_id}'";
+				
+				query($sql);
+			}
+		}
+	}
+	return $added;
+}
+
+function review_detail_add() {
+	$created = date('Y-m-d');
+	// print_r ($_POST);
+	$description = htmlspecialchars($_POST['description']);
+	$name = $_POST['name'];
+	$link = htmlspecialchars($_POST['link_pdf']);
+
+	$sql = "INSERT INTO `tbl_reviews_detail`(`name`, `dsc`, `link`, `create_date`) VALUES ('{$name}','{$description}','{$link}','{$created}')";
+	
+	// print_r ($sql);
+		
+	// 	exit;
+	// exit;
+	$added = query($sql);
+
+	if(!empty($added))
+	{
+		global $db_connected;
+
+		$product_id = mysqli_insert_id($db_connected);
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../images/review_detail/' . $product_id . '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
+			
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
+
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
+
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $storage_path . $file_name;
+					
+					$number++;
+				}
+			}
+
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+
+			if($moved)
+			{
+				$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
+
+				$sql = "UPDATE tbl_reviews_detail SET img_cover = '{$file_name}' WHERE id = '{$product_id}'";
 				
 				query($sql);
 			}
@@ -487,6 +650,16 @@ function banner_list()
 {
 	$sql	= "SELECT *
 				FROM tbl_banner
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function banner_before_after_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_banner_before_after
 				WHERE is_active = '1'
 				ORDER BY id ASC";
 	
@@ -588,6 +761,74 @@ function service_add() {
 
 	return $added;
 }
+
+function before_after_add() {
+	$created = date('Y-m-d');
+	
+	$names = $_POST['name'];
+
+	$sql	 = "INSERT INTO `tbl_banner_before_after`(`name`, `create_date`) VALUES ('{$names}','{$created}')";
+		// print_r ($sql);
+		
+		// exit;
+	// exit;
+	$added = query($sql);
+
+	if(!empty($added))
+	{
+		global $db_connected;
+
+		$service_id = mysqli_insert_id($db_connected);
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../images/banner_beforafter/' . $service_id . '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
+			
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
+
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
+
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $storage_path . $file_name;
+					
+					$number++;
+				}
+			}
+
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+
+			if($moved)
+			{
+				$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
+
+				$sql = "UPDATE tbl_banner_before_after SET img_cover = '{$file_name}' WHERE id = '{$service_id}'";
+				query($sql);
+			}
+		}
+	}
+	return $added;
+}
+
 
 function news_add() {
 	$created = date('Y-m-d H:i:s');

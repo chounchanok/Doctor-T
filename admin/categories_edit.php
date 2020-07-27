@@ -7,7 +7,7 @@
 	<meta name="description" content="bootstrap admin template">
 	<meta name="author" content="">
 
-	<title>Categories Edit | General S </title>
+	<title>Categories Edit | Doctor T </title>
 
 	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 	<link rel="shortcut icon" href="../assets/images/logo.png">
@@ -97,10 +97,10 @@
 				                  	<label class="form-control-label" for="name">Name</label>
 				                  	<input type="text" class="form-control" id="name" name="name" placeholder="" value="<?php echo $cate_detail->categories_name; ?>" required>
                                 </div>
-                                <div class="form-group form-material" data-plugin="formMaterial">
+                                <!-- <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="short_desc">Short Description</label>
 				                  	<input type="text" class="form-control" id="short_desc" name="short_desc" placeholder="" value="<?php echo $cate_detail->short_desc; ?>" required>
-				                </div>
+				                </div> -->
 				                <div class="text-right">
 				                	<input type="hidden" name="categories_id" value="<?php echo $cate_detail->categories_id; ?>">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">

@@ -83,12 +83,12 @@ require_once 'auth.php';
 							<span class="site-menu-title">Slide</span>
 						</a>
 					</li> -->
-					<!-- <li class="site-menu-item <?php echo ( in_array($current_file, array('categories.php', 'categories_add.php', 'categories_edit.php') ) ) ? 'active' : ''; ?>">
+					<li class="site-menu-item <?php echo ( in_array($current_file, array('categories.php', 'categories_add.php', 'categories_edit.php') ) ) ? 'active' : ''; ?>">
 						<a class="animsition-link" href="categories.php">
 							<i class="site-menu-icon icon fa-sitemap" aria-hidden="true"></i>
 							<span class="site-menu-title">Categories</span>
 						</a>
-					</li> -->
+					</li>
 					<li class="site-menu-item <?php echo ( in_array($current_file, array('reviews.php', 'reviews_add.php', 'reviews_edit.php') ) ) ? 'active' : ''; ?>">
 						<a class="animsition-link" href="reviews.php">
 							<i class="site-menu-icon icon fa-product-hunt" aria-hidden="true"></i>
@@ -99,6 +99,24 @@ require_once 'auth.php';
 						<a class="animsition-link" href="news_detail.php">
 							<i class="site-menu-icon icon fa fa-newspaper-o" aria-hidden="true"></i>
 							<span class="site-menu-title">Update News</span>
+						</a>
+					</li>
+					<li class="site-menu-item <?php echo ( in_array($current_file, array('banner_before_after.php', 'banner_before_after_add.php', 'banner_before_after_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="banner_before_after.php">
+							<i class="site-menu-icon icon fa fa-picture-o" aria-hidden="true"></i>
+							<span class="site-menu-title">Banner Before After</span>
+						</a>
+					</li>
+					<li class="site-menu-item <?php echo ( in_array($current_file, array('before_after.php', 'before_after_add.php', 'before_after_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="before_after.php">
+							<i class="site-menu-icon icon fa fa-pie-chart" aria-hidden="true"></i>
+							<span class="site-menu-title">Before After</span>
+						</a>
+					</li>
+					<li class="site-menu-item <?php echo ( in_array($current_file, array('review_detail.php', 'review_detail_add.php', 'review_detail_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="review_detail.php">
+							<i class="site-menu-icon icon fa fa-pencil-square-o" aria-hidden="true"></i>
+							<span class="site-menu-title">Review Detail</span>
 						</a>
 					</li>
 					<!-- <li class="site-menu-item <?php echo ( in_array($current_file, array('custommer.php') ) ) ? 'active' : ''; ?>">

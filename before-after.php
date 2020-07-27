@@ -45,14 +45,29 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $banner_befor_list = banner_before_list();
+
+            $before_after_list = before_list();
+            $before_after_list_two = before_two_list();
+            $before_after_list_tree = before_tree_list();
+            $before_after_list_four = before_four_list();
+            $before_after_list_five = before_five_list();
+            $before_after_list_six = before_six_list();
+            $before_after_list_seven = before_seven_list();
+        ?>
         <section class="header-index">
             <div class="owl-slider">
                 <div id="banner-slidebefore" class="owl-carousel">
+                <?php foreach ($banner_befor_list as $banner_befor_detail) : ?>
                     <div class="item">
-                        <a href="">
+                        <img src="images/banner_beforafter/<?php echo $banner_befor_detail->id; ?>/<?php echo $banner_befor_detail->img_cover; ?>" class="img-responsive"/>
+                        <!-- <a href="">
                             <img src="images/teeth.jpg" class="img-responsive">
-                        </a>
+                        </a> -->
                     </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </section>
@@ -110,60 +125,16 @@
                             <h2>ฟันยื่น</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list as $before_after_detail) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail->id; ?>/<?php echo $before_after_detail->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail->dsc; ?></p>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                    <?php endforeach ?>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -185,60 +156,16 @@
                             <h2>ปากอูม</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list_two as $before_after_detail_two) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail_two->id; ?>/<?php echo $before_after_detail_two->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail_two->dsc; ?></p>
                             </div>
+                        </a>
                     </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                    <?php endforeach ?>                   
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -247,82 +174,6 @@
                 </div>
             </div>
         </section>
-
-        <section class="cat-grey-detail tabcontent" id="id2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 padding-bottom-30">
-                        <hr class="blue-hr2">
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="header-detail">
-                            <h1>XXXXXXXXX</h1>
-                            <h2>ปากอูม</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <button class="button-showmore">Show more</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
         <section class="cat-grey-detail tabcontent" id="id3">
             <div class="container">
@@ -336,60 +187,16 @@
                             <h2>ฟันล่างคร่อมบน</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list_tree as $before_after_detail_tree) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail_tree->id; ?>/<?php echo $before_after_detail_tree->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail_tree->dsc; ?></p>
                             </div>
+                        </a>
                     </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                    <?php endforeach ?>  
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -411,60 +218,16 @@
                             <h2>ฟันขึ้นเก</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list_four as $before_after_detail_four) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail_four->id; ?>/<?php echo $before_after_detail_four->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail_four->dsc; ?></p>
                             </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                        </a>
+                    </div> 
+                    <?php endforeach ?>                    
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -486,60 +249,16 @@
                             <h2>ฟันหายบางซี่</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list_five as $before_after_detail_five) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail_five->id; ?>/<?php echo $before_after_detail_five->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail_five->dsc; ?></p>
                             </div>
+                        </a>
                     </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                    <?php endforeach ?> 
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -561,60 +280,16 @@
                             <h2>เขี้ยวอยู่สูง,ฟันฝัง</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list_six as $before_after_detail_six) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail_six->id; ?>/<?php echo $before_after_detail_six->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail_six->dsc; ?></p>
                             </div>
+                        </a>
                     </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                    <?php endforeach ?>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -636,60 +311,16 @@
                             <h2>อื่นๆ</h2>
                         </div>
                     </div>
+                    <?php foreach ($before_after_list_seven as $before_after_detail_seven) : ?>
                     <div class="col-lg-6 col-md-6">
                         <a href="before-after-detail">
                             <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                                <img src="images/before_after/<?php echo $before_after_detail_seven->id; ?>/<?php echo $before_after_detail_seven->img_cover; ?>" class="img-responsive">
+                                <p><?php echo $before_after_detail_seven->dsc; ?></p>
                             </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-lg-6 col-md-6">
-                        <a href="before-after-detail">
-                            <div class="review-detail">
-                                <img src="images/review.png" class="img-responsive">
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                            </div>
-                    </div>
-                    </a>
+                        </a>
+                    </div> 
+                    <?php endforeach ?>                  
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">

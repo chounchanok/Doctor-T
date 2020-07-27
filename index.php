@@ -117,8 +117,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">';
-
-                                    if($box == 1){
+                            ?>
+                                    <?php if($box == 1){
                                         $start = 0;
                                         $end = $limit;
                                         $frame = reviews_list_page($start.','.$end);
@@ -129,43 +129,36 @@
                                     }
 //ครีม
                                     if(!empty($frame)){
-                                        foreach ($frame as $_frame) {
-                                            echo '
+                                        foreach ($frame as $_frame) {?>
                                             <div class="col-md-6">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="img-shadow">
                                                             <a class="popup-youtube"
-                                                                href="'.$_frame->link.'?autoplay=1">
+                                                                href="<?php echo $_frame->link; ?>">
 
-                                                                <img src="images/index1.jpg" class="img-responsive">
+                                                            <img src="images/reviews/<?php echo $_frame->id; ?>/<?php echo $_frame->img_cover; ?>" class="img-responsive">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="detail-index-slide">
-                                                            <h2>บอกเล่าเรื่องราวของ DR.T โดย</h2>
+                                                            <h2><?php echo $_frame->name; ?></h2>
                                                             <h1>Father Biondi</h1>
-                                                            <h4>President of Saint Louis University<br>USA from
-                                                                1987-2013<br>
-                                                                President Emeritus of Saint Louis University,<br>
-                                                                USA from 2013 - Present</h4>
+                                                            <h4><?php echo $_frame->desc; ?></h4>
                                                             <hr>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>';
-                                        }
-                                    }
-
-                                    echo '</div>
+                                            </div>
+                                        <?php }
+                                    } ?>
+                                            </div>
                                         </div>
                                     </div>  
-                                </div>';
+                                </div>
 
-                        }
-
-                        ?>
+                        <?php } ?>
 
                     </div>
                           

@@ -85,7 +85,7 @@
 			              	<form id="serviceAdd" name="serviceAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="title">Name</label>
-				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Service" required>
+				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Slide" required>
 				                </div>
 				                <!-- <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="short_desc">Short Description</label>

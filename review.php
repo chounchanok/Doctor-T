@@ -43,6 +43,10 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $review_detail1 = review_detail_list();
+        ?>
         <section class="banner-review">
             <div class="container">
                 <img src="images/bannerreview.png" class="img-responsive">
@@ -56,116 +60,21 @@
         <section class="review-detail">
             <div class="container">
                 <div class="row">
+                <?php foreach ($review_detail1 as $review_list) : ?>
                     <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (1).png" class="img-responsive">
+                            <a class="popup-youtube" href="<?php echo $review_list->link; ?>?autoplay=1">
+                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
                             </a>
-                            <a href="review-detail">
+                            <a href="review-detail?id=<?php echo $review_list->id; ?>">
                             <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
+                                <h4><?php echo $review_list->name; ?></h4>
                                 <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
+                                <p><?php echo $review_list->dsc; ?></p>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (2).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">                            
-                                <div class="content-review">
-                                <h4>MR. NAJJIAKJ FFJDJIDIDDIDI</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (3).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">                            
-                                <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (4).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">
-                                <div class="content-review">
-                                <h4>MR. NAJJIAKJ FFJDJIDIDDIDI</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (5).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">                            
-                                <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
+                    <?php endforeach ?>
 
-                    <div class="col-lg-4 col-md-6">
-
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (6).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">
-                                <div class="content-review">
-                                <h4>MR. NAJJIAKJ FFJDJIDIDDIDI</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
 
                     <input type="hidden" id="count_query" value="6" />
 

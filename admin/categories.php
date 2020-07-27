@@ -116,7 +116,7 @@
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
 			                  							<td style=""><?php echo $cate_detail->categories_name; ?></td>
-			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $cate_detail->create_date ) ); ?></td>
+			                  							<td style=""><?php echo date("d/m/Y", strtotime( $cate_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'categories_edit.php?id=<?php echo $cate_detail->categories_id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
 			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delC(<?php echo $cate_detail->categories_id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>

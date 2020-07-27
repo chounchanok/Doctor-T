@@ -114,6 +114,131 @@ function banner_list()
 	return query($sql);
 }
 
+function review_detail_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_reviews_detail
+				WHERE is_active = '1'
+				ORDER BY id ASC LIMIT 6 ";
+	
+	return query($sql);
+}
+
+function review_detail_list_wh($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM tbl_reviews_detail
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function banner_before_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_banner_before_after
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 1
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_two_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 2
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_tree_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 3
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_four_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 4
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_five_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 5
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_six_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 6
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_seven_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 7
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_eng_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 8
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_ning_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 9
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
 function reviews_list()
 {
 	$sql	= "SELECT *

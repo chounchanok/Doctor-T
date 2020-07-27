@@ -42,6 +42,10 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $befor_ning_list = before_ning_list();
+        ?>
         <section class="kilbon-banner">
             <div class="container">
                 <img src="images/kilbon-banner.jpg" class="img-responsive">
@@ -59,30 +63,14 @@
         <section class="detail-teeth margin-top-20 padding-bottom-30" id="defaultopen">
             <div class="container">
                 <div class="row">
+                <?php foreach ($befor_ning_list as $before_ning_detail) : ?>
                     <div class="col-lg-6 col-md-6">
                         <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                            <img src="images/before_after/<?php echo $before_ning_detail->id; ?>/<?php echo $before_ning_detail->img_cover; ?>" class="img-responsive">
+                            <p><?php echo $before_ning_detail->dsc; ?></p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
+                <?php endforeach ?>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
