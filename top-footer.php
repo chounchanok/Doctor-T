@@ -1,8 +1,8 @@
 
 <?php 
-            include 'init.php';
-            $review_detail1 = review_detail_list();
-        ?>
+    require_once('init.php');
+    $review_detail1 = review_detail_list();
+?>
 
     <section class="topfooter">
         <div class="container">
