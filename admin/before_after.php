@@ -120,14 +120,7 @@
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
 			                  							<td style=""><?php echo $product_detail->name; ?></td>
-												
-			                  							<!-- <td style="">
-			                  								<?php if ($product_detail->is_recommend == '1') : ?>
-			                  									<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="pdChange(<?php echo $product_detail->id; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
-			                  								<?php else : ?>
-			                  									<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="pdChange(<?php echo $product_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
-			                  								<?php endif; ?>
-			                  							</td> -->
+
 			                  							<td style=""><?php echo date("d/m/Y", strtotime( $product_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'before_after_edit.php?id=<?php echo $product_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
@@ -190,8 +183,8 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="p_id" name="p_id">
-					<button type="button" class="btn btn-success" onclick="deleteProduct()"><i class="fa fa-check"></i> Confirm</button>
+					<input type="hidden" id="beforeafter_id" name="beforeafter_id">
+					<button type="button" class="btn btn-success" onclick="deletebeforeafter()"><i class="fa fa-check"></i> Confirm</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -273,18 +266,18 @@
 		});
 	}
 
-	function delP(pid)
+	function delP(beforeafter_id)
     {
-    	$('#p_id').val(pid);
+    	$('#beforeafter_id').val(beforeafter_id);
     	$('#modaldelete').modal('show');
     }
 
-     function deleteProduct()
+     function deletebeforeafter()
     {
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {pid:$('#p_id').val(), action:'delProduct'},
+		  	data 	: {beforeafter_id:$('#beforeafter_id').val(), action:'delbeforeafter'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

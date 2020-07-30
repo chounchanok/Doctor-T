@@ -7,10 +7,10 @@
 	<meta name="description" content="bootstrap admin template">
 	<meta name="author" content="">
 
-	<title>Reviews Add | Doctor T </title>
+	<title>Service Edit | Doctor T </title>
 
 	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-	<link rel="shortcut icon" href="../assets/images/logo.png">
+	<link rel="shortcut icon" href="../assets/images/doctor-logo.png">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -19,7 +19,6 @@
 	<link rel="stylesheet" href="assets/css/site.css">
 
 	<link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
-
 
 	<!-- Plugins -->
 	<link rel="stylesheet" href="vendor/animsition/animsition.css">
@@ -58,18 +57,33 @@
 	<?php $current_file = basename(__FILE__); ?>
 	<?php include 'header.php'; ?>
 	<?php 
+	
 	if(!empty($_POST))
 	{	
-		if(product_add())
+
+		// print_r(service_edit());
+		// exit;
+		if(review_edit())
 		{
 			echo '<script>
-			     alert("เพิ่มข้อมูลสำเร็จ");
-			     window.location.href = "reviews.php"
+			     alert("แก้ไขข้อมูลสำเร็จ");
+			     window.location.href = "review_detail.php"
 			      </script>';
 			exit;
 		}
 	}
+
+	if(empty($_GET['id']))
+	{
+		header('location: review_detail.php');
+		exit;
+	}
 	
+
+
+	
+	$review_detail = review_detail($_GET['id']);
+
 	?>
 
 	<!-- Page -->
@@ -80,35 +94,36 @@
 					<!-- Panel Static Labels -->
 		          	<div class="panel">
 			            <div class="panel-heading">
-			              <h3 class="panel-title">Reviews Add</h3>
+			              <h3 class="panel-title">Review Edit</h3>
 			            </div>
-				
-
 			            <div class="panel-body container-fluid">
-			              	<form id="productAdd" name="productAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
+			              	<form id="serviceAdd" name="serviceAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="title">Name</label>
-				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Product" required>
+				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $review_detail->name; ?>" required>
 				                </div>
+	
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description</label>
-									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="description" name="description"></textarea>
+									<textarea class="form-control summernote" rows="4" id="description" name="description">
+										<?php echo $review_detail->dsc; ?>
+									</textarea>
 								</div>
 								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube</label>
-				                  	<input type="text" class="form-control" id="link_pdf" name="link_pdf" placeholder="Link Youtube">
+				                  	<label class="form-control-label" for="short_desc">Link Youtube</label>
+				                  	<input type="text" class="form-control" id="link_youtube" name="link_youtube" value="<?php echo $review_detail->link; ?>" required>
 				                </div>
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="" data-allowed-file-extensions="png jpg"/>
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/review_detail/' . $review_detail->id . '/'.$review_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
 									<p class="help-block"><i>Image size: 1400x600px</i></p>
 				                </div>
-
 				                <div class="text-right">
+				                	<input type="hidden" name="review_id" value="<?php echo $review_detail->id; ?>">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>
-						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'reviews.php';">
+						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'review_detail.php';">
 						              	<span><i class="icon wb-close" aria-hidden="true"></i> Close</span>
 						            </button>
           						</div>
@@ -152,7 +167,6 @@
 
 	<script type="text/javascript">var uploadUrl = 'upload.php';</script>
 	<script type="text/javascript">
-	
 	$(document).ready(function() {
   		$('#description').summernote({ 
   			height				: 150
@@ -172,6 +186,13 @@
   		});
 	});
 
+
+	$(document).ready(function() {
+        $('.datepicker').datepicker({
+            format: 'yyyy/mm/dd'
+        });
+    });
+	
 	function sendFile(file, url, $editor)
 	{
 		data = new FormData();
@@ -189,7 +210,7 @@
 				
 				return myXhr;
 			}
-			,url		: uploadUrl + '?action=upload_image&path=reviews'
+			,url		: uploadUrl + '?action=upload_image&path=service'
 			,cache		: false
 			,contentType: false
 			,processData: false
@@ -228,7 +249,7 @@
 		$.ajax({
 			data		: data
 			,type		: 'post'
-			,url		: uploadUrl + '?action=delete_image&path=product'
+			,url		: uploadUrl + '?action=delete_image&path=service'
 			,cache		: false
 			,contentType: false
 			,processData: false

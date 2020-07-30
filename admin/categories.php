@@ -261,9 +261,9 @@
 		});
 	}
 
-	function delC(cid)
+	function delC(cate_id)
     {
-    	$('#cate_id').val(cid);
+    	$('#cate_id').val(cate_id);
     	$('#modaldelete').modal('show');
     }
 
@@ -272,7 +272,7 @@
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {cid:$('#cate_id').val(), action:'delCategories'},
+		  	data 	: {cate_id:$('#cate_id').val(), action:'delCategories'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

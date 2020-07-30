@@ -8,7 +8,7 @@ $html = '';
 foreach($review as $_review){
     $html .= '
     <div class="col-lg-4 col-md-6">
-        <a class="popup-youtube" href=" '.$_review->link.' ">
+        <a class="popup-youtube" href=" '.$_review->link.'&rel=0&autoplay=1&mute=1&loop=1&controls=1">
                 <img src="images/review_detail/'.$_review->id.'/'.$_review->img_cover.' " class="img-responsive">
             </a>
             <a href="review-detail?id='.$_review->id.'">
@@ -26,3 +26,17 @@ foreach($review as $_review){
 echo $html;
 
 ?>
+
+<script>
+        $(function() {
+            $('.popup-youtube').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false,
+            });
+        });
+
+    </script>

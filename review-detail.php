@@ -82,6 +82,7 @@
                     </div>
                     <?php foreach ($review_detail1 as $review_list) : ?>
                     <div class="col-lg-4 col-md-6">
+                    
                             <a class="popup-youtube" href="<?php echo $review_list->link; ?>">
                                 <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
                             </a>

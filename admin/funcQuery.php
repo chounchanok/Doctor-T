@@ -194,6 +194,43 @@ if ( $_POST['action'] == 'delCustomer' ) {
 	}
 }
 
+//เริ่มลบหน้า review/success story
+if ( $_POST['action'] == 'delreview' ) {
+	$sql = "UPDATE tbl_reviews_detail SET is_active = '0' WHERE id = {$_POST['review_id']}";
+	$result = query($sql);
 
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า review/success story
+
+//เริ่มลบหน้า beforeafter
+if ( $_POST['action'] == 'delbeforeafter' ) {
+	$sql = "UPDATE tbl_before_after_detail SET is_active = '0' WHERE id = {$_POST['beforeafter_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า review/success story
+
+//เริ่มลบหน้า categories
+if ( $_POST['action'] == 'delCategories' ) {
+	$sql = "UPDATE tbl_categories SET is_active = '0' WHERE categories_id = {$_POST['cate_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า categories
 
 ?>

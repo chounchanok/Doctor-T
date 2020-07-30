@@ -7,16 +7,18 @@
 	<meta name="description" content="bootstrap admin template">
 	<meta name="author" content="">
 
-	<title>Reviews Edit | General S </title>
+	<title>Before After Edit | Doctor T </title>
 
 	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-	<link rel="shortcut icon" href="../assets/images/logo.png">
+	<link rel="shortcut icon" href="../assets/images/doctor-logo.png">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="vendor/summernote/summernote-bs4.css">
 	<link rel="stylesheet" href="assets/css/bootstrap-extend.css">
 	<link rel="stylesheet" href="assets/css/site.css">
+
+	<link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
 
 	<!-- Plugins -->
 	<link rel="stylesheet" href="vendor/animsition/animsition.css">
@@ -55,17 +57,15 @@
 	<?php $current_file = basename(__FILE__); ?>
 	<?php include 'header.php'; ?>
 	<?php 
-
+	
 	if(!empty($_POST))
 	{	
 
-		// print_r(product_edit());
-		// exit;
-		if(product_edit())
+		if(beforeafter_edit())
 		{
 			echo '<script>
 			     alert("แก้ไขข้อมูลสำเร็จ");
-			     window.location.href = "reviews.php"
+			     window.location.href = "before_after.php"
 			      </script>';
 			exit;
 		}
@@ -73,11 +73,14 @@
 
 	if(empty($_GET['id']))
 	{
-		header('location: reviews.php');
+		header('location: before_after.php');
 		exit;
 	}
 	
-	$product_detail = product_detail($_GET['id']);
+
+
+	
+	$beforeafter_detail = beforeafter_detail($_GET['id']);
 
 	?>
 
@@ -89,35 +92,46 @@
 					<!-- Panel Static Labels -->
 		          	<div class="panel">
 			            <div class="panel-heading">
-			              <h3 class="panel-title">Reviews Edit</h3>
+			              <h3 class="panel-title">Review Edit</h3>
 			            </div>
 			            <div class="panel-body container-fluid">
-			              	<form id="productEdit" name="productEdit" class="form-horizontal" method="post" enctype="multipart/form-data">
+			              	<form id="serviceAdd" name="serviceAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
 				                <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="name">Name</label>
-				                  	<input type="text" class="form-control" id="name" name="name" placeholder="" value="<?php echo $product_detail->name; ?>" required>
+				                  	<label class="form-control-label" for="title">Name</label>
+				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $beforeafter_detail->name; ?>" required>
 				                </div>
+
+								<div class="form-group form-material" data-plugin="formMaterial">
+									<label class="form-control-label" for="categories">Categories</label>
+									<?php $categories_list = categories_list(); ?>
+									<select class="form-control" name="categories">
+									<?php foreach ($categories_list as $categories_detail) : ?>
+										<option value="<?php echo $categories_detail->categories_id; ?>"><?php echo $categories_detail->categories_name; ?></option>
+									<?php endforeach ?>
+									</select>
+								</div>
+	
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description</label>
 									<textarea class="form-control summernote" rows="4" id="description" name="description">
-										<?php echo $product_detail->desc; ?>
+										<?php echo $beforeafter_detail->dsc; ?>
 									</textarea>
 								</div>
 								<div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="link_pdf">Link Youtube</label>
-				                  	<input type="text" class="form-control" id="link_pdf" name="link_pdf" value="<?php echo $product_detail->link; ?>">
+				                  	<label class="form-control-label" for="link_youtube">Link Youtube</label>
+				                  	<input type="text" class="form-control" id="link_youtube" name="link_youtube" value="<?php echo $beforeafter_detail->link; ?>" required>
 				                </div>
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Images Cover</label>
-			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/reviews/' . $product_detail->id . '/' . $product_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/before_after/' . $beforeafter_detail->id . '/'.$beforeafter_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
 									<p class="help-block"><i>Image size: 1400x600px</i></p>
 				                </div>
 				                <div class="text-right">
-				                	<input type="hidden" name="product_id" value="<?php echo $product_detail->id; ?>">
+				                	<input type="hidden" name="beforeafter_id" value="<?php echo $beforeafter_detail->id; ?>">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>
-						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'reviews.php';">
+						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'before_after.php';">
 						              	<span><i class="icon wb-close" aria-hidden="true"></i> Close</span>
 						            </button>
           						</div>
@@ -154,10 +168,14 @@
 	<script src="vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
 	<script src="vendor/matchheight/jquery.matchHeight-min.js"></script>
 
+	<!-- Custom Theme Scripts -->
+	<script src="js/custom.js"></script>
+	<script type="text/javascript" src="plugin/moment-2.10.2/moment.min.js"></script>
+	<script type="text/javascript" src="plugin/bootstrap-datetimepicker-4.17.37/bootstrap-datetimepicker.min.js"></script>
+
 	<script type="text/javascript">var uploadUrl = 'upload.php';</script>
 	<script type="text/javascript">
-
-$(document).ready(function() {
+	$(document).ready(function() {
   		$('#description').summernote({ 
   			height				: 150
 			,callbacks: {
@@ -176,177 +194,13 @@ $(document).ready(function() {
   		});
 	});
 
-	$(document).ready(function() {
-  		$('#description2').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
 
 	$(document).ready(function() {
-  		$('#description3').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
-	$(document).ready(function() {
-  		$('#description4').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
-	$(document).ready(function() {
-  		$('#description5').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
-	$(document).ready(function() {
-  		$('#description6').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
-	$(document).ready(function() {
-  		$('#description7').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
-	$(document).ready(function() {
-  		$('#description8').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
-	$(document).ready(function() {
-  		$('#description9').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
+        $('.datepicker').datepicker({
+            format: 'yyyy/mm/dd'
+        });
+    });
 	
-	$(document).ready(function() {
-  		$('#description10').summernote({ 
-  			height				: 150
-			,callbacks: {
-		        onImageUpload: function(files) {
-		            url = $(this).data('upload'); //path is defined as data attribute for  textarea
-		            sendFile(files[0], url, $(this));
-		        }
-		        ,onMediaDelete : function($target, editor, $editable) {
-	          		deleteFile($target[0].src); // img 
-
-	         		// remove element in editor 
-	         		$target.remove();
-	    		}
-		    }
-		    
-  		});
-	});
-
 	function sendFile(file, url, $editor)
 	{
 		data = new FormData();
@@ -364,7 +218,7 @@ $(document).ready(function() {
 				
 				return myXhr;
 			}
-			,url		: uploadUrl + '?action=upload_image&path=product'
+			,url		: uploadUrl + '?action=upload_image&path=service'
 			,cache		: false
 			,contentType: false
 			,processData: false
@@ -403,7 +257,7 @@ $(document).ready(function() {
 		$.ajax({
 			data		: data
 			,type		: 'post'
-			,url		: uploadUrl + '?action=delete_image&path=product'
+			,url		: uploadUrl + '?action=delete_image&path=service'
 			,cache		: false
 			,contentType: false
 			,processData: false
@@ -435,12 +289,14 @@ $(document).ready(function() {
 	<script src="assets/js/Plugin/asscrollable.js"></script>
 	<script src="assets/js/Plugin/slidepanel.js"></script>
 	<script src="assets/js/Plugin/switchery.js"></script>
-	<script src="assets/js/Plugin/matchheight.js"></script>	
+	<script src="assets/js/Plugin/matchheight.js"></script>
+
+	<script src="assets/js/v1.js"></script>
 	<!-- Upload -->
 	<script src="vendor/upload/js/jquery.fileuploader.js" type="text/javascript"></script>
 	<script src="vendor/upload/js/custom.js" type="text/javascript"></script>
 	<script src="vendor/dropify/dropify.min.js"></script>
 
-	<script src="assets/js/v1.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script>
 </body>
 </html>

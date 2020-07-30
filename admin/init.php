@@ -367,6 +367,19 @@ function product_add() {
 	// print_r ($sql);
 		
 	// 	exit;
+	//	$folder_path = "assets/images/description\product";   
+			// List of name of files inside 
+			// specified folder 
+			$files = glob($folder_path.'/*');  
+			
+			// Deleting all the files in the list 
+			foreach($files as $file) { 
+			
+				if(is_file($file))  
+				
+					// Delete the given file 
+					unlink($file);  
+			} 
 	// exit;
 	$added = query($sql);
 
@@ -692,6 +705,7 @@ function service_detail($id)
 }
 
 
+
 function service_add() {
 	$created = date('Y-m-d H:i:s');
 
@@ -966,70 +980,179 @@ function service_edit() {
 	return $updated;
 }
 
-// function banner_edit() {
-// 	$update_date 	= date('Y-m-d H:i:s');
-// 	$banner_id 	= $_POST['service_id'];
+function review_detail($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
 
-// 	$sql = "UPDATE tbl_banner
-// 			SET name = '{$_POST['name']}', update_date = '{$update_date}'
-// 			WHERE id = '{$banner_id}'";
-// 	// exit;
-// 	$updated = query($sql);
+	$sql	= "SELECT *
+				FROM tbl_reviews_detail
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
 
-// 	if(!empty($updated))
-// 	{
-// 		global $db_connected;
+	return (!empty($result)) ? current($result) : false;
+}
 
-// 		if(!empty($_FILES['covImg']))
-// 		{
-// 			$file_name		= $_FILES['covImg']["name"];
-// 			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
-// 			$filePath 		= 'images/' . $banner_id . '/'
-// 			$file_path		= $filePath . $file_name;
 
-// 			if ( !is_dir($filePath) ) {
-// 				mkdir($filePath);
-// 			}
+//เริ่มแก้ไขหน้า review/success story
+
+function review_edit() {
+	$update_date 	= date('Y-m-d H:i:s');
+	$review_id 	= $_POST['review_id'];
+	
+	
+
+	$sql = "UPDATE tbl_reviews_detail
+			SET name = '{$_POST['name']}', dsc = '{$_POST['description']}', link = '{$_POST['link_youtube']}',update_date = '{$update_date}'
+			WHERE id = '{$review_id}'";
+	// exit;
+	$updated = query($sql);
+
+	if(!empty($updated))
+	{
+		global $db_connected;
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../images/review_detail/'.$review_id. '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
 			
-// 			if(file_exists($file_path))
-// 			{
-// 				$number			= 2;
-// 				$file_exists	= true;
-// 				$file_extension	= null;
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
 
-// 				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
-// 				if(!empty($matchs[2]))
-// 				{
-// 					$file_extension = $matchs[2];
-// 				}
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
 
-// 				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
 
-// 				while(file_exists($file_path))
-// 				{
-// 					$file_name = $file_name_only . "_{$number}.{$file_extension}";
-// 					$file_path = $filePath . $file_name;
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $filePath . $file_name;
 					
-// 					$number++;
-// 				}
-// 			}
+					$number++;
+				}
+			}
 
-// 			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
 
-// 			if($moved)
-// 			{
-// 				/*$originalFile 	= $file_path;
-// 				$targetFile 	= $file_path;
+			if($moved)
+			{
+				/*$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
 
-// 				resizeImg( $originalFile, $targetFile, $file_extension, 1000, 1000 );*/
-// 				$sql = "UPDATE tbl_banner SET img_cover = '{$file_name}' WHERE id = '{$banner_id}'";
-// 				query($sql);
-// 			}
-// 		}
-// 	}
+				resizeImg( $originalFile, $targetFile, $file_extension, 1000, 1000 );*/
+				$sql = "UPDATE tbl_reviews_detail SET img_cover = '{$file_name}' WHERE id = '{$review_id}'";
+				query($sql);
+			}
+		}
+	}
 
-// 	return $updated;
-// }
+	return $updated;
+}  //จบแก้ไขหน้า review/success story
+
+
+
+function beforeafter_detail($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+
+
+
+//เริ่มแก้ไขหน้า Before After
+
+function beforeafter_edit() {
+	$update_date 	= date('Y-m-d H:i:s');
+	$beforeafter_id 	= $_POST['beforeafter_id'];
+	
+	
+
+	$sql = "UPDATE tbl_before_after_detail
+			SET name = '{$_POST['name']}', dsc = '{$_POST['description']}', link = '{$_POST['link_youtube']}',update_date = '{$update_date}'
+			WHERE id = '{$beforeafter_id}'";
+	// exit;
+	$updated = query($sql);
+
+	if(!empty($updated))
+	{
+		global $db_connected;
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../images/before_after/'.$beforeafter_id. '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
+			
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
+
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
+
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $filePath . $file_name;
+					
+					$number++;
+				}
+			}
+
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+
+			if($moved)
+			{
+				/*$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
+
+				resizeImg( $originalFile, $targetFile, $file_extension, 1000, 1000 );*/
+				$sql = "UPDATE tbl_before_after_detail SET img_cover = '{$file_name}' WHERE id = '{$beforeafter_id}'";
+				query($sql);
+			}
+		}
+	}
+
+	return $updated;
+}  //จบแก้ไขหน้า review/success story
 
 
 function storage_path($destination = null)

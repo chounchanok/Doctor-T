@@ -93,10 +93,10 @@
 			                    							<div class="th-inner ">Name</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
-			                    						<!-- <th style="" data-field="code">
-			                    							<div class="th-inner ">Description</div>
+			                    						<th style="" data-field="news recomment">
+			                    							<div class="th-inner ">Recommend</div>
 			                    							<div class="fht-cell"></div>
-			                    						</th> -->
+			                    						</th>
 			                    						<th style="" data-field="">
 			                    							<div class="th-inner ">Created</div>
 			                    							<div class="fht-cell"></div>
@@ -116,7 +116,13 @@
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
 			                  							<td style=""><?php echo $newsdetail_detail->name; ?></td>
-			                  							<!-- <td style=""><?php echo $newsdetail_detail->description; ?></td> -->
+			                  							<td style="">
+			                  								<?php if ($newsdetail_detail->is_recommend == '1') : ?>
+			                  									<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="StChange(<?php echo $newsdetail_detail->id; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
+			                  								<?php else : ?>
+			                  									<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="StChange(<?php echo $newsdetail_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
+			                  								<?php endif; ?>
+			                  							</td> 
 			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $newsdetail_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'newsdetail_edit.php?id=<?php echo $newsdetail_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
@@ -239,7 +245,7 @@
 
 	<script type="text/javascript">
 
-	function sChange(sid, status)
+	function StChange(sid, status)
     {
     	$('#service_id').val(sid);
     	$('#sStatus').val(status)

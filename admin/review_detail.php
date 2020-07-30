@@ -119,7 +119,7 @@
 			                  							<td style=""><?php echo date("d/m/Y", strtotime( $review_detail_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'review_detail_edit.php?id=<?php echo $review_detail_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
-			                  								<!-- <button type="button" class="btn btn-round btn-danger btn-sm" onclick="delP(<?php echo $product_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button> -->
+			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delr(<?php echo $review_detail_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
 			                  							</td> 
 			                  						</tr>
 			                  						<?php
@@ -147,7 +147,7 @@
 	
 	<?php include 'footer.php'; ?>
 
-	<div class="modal fade bs-example-modal-sm" id="modalChange" tabindex="-1" role="dialog" aria-hidden="true">
+	<!-- <div class="modal fade bs-example-modal-sm" id="modalChange" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -165,7 +165,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="modal fade bs-example-modal-sm" id="modaldelete" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
@@ -178,8 +178,8 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="p_id" name="p_id">
-					<button type="button" class="btn btn-success" onclick="deleteProduct()"><i class="fa fa-check"></i> Confirm</button>
+					<input type="hidden" id="review_id" name="review_id">
+					<button type="button" class="btn btn-success" onclick="deletereview()"><i class="fa fa-check"></i> Confirm</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -238,41 +238,41 @@
 
 	<script type="text/javascript">
 
-	function pdChange(pid, status)
-    {
-    	$('#product_id').val(pid);
-    	$('#pmStatus').val(status)
-    	$('#modalChange').modal('show');
-    }
+	// function pdChange(pid, status)
+    // {
+    // 	$('#product_id').val(pid);
+    // 	$('#pmStatus').val(status)
+    // 	$('#modalChange').modal('show');
+    // }
 
-    function changeSt()
-    {
-   		$.ajax({
-		  	type 	: 'POST',
-		  	url 	: 'funcQuery.php',
-		  	data 	: {pid:$('#product_id').val(), st:$('#pmStatus').val(), action:'changeStpm'},
-		  	success: function(data) {
-		        	if (data == 'true') {
-		        		location.reload();
-		        	} else {
-		        		console.log(data);
-		        	}        	
-		        }
-		});
-	}
+    // function changeSt()
+    // {
+   	// 	$.ajax({
+	// 	  	type 	: 'POST',
+	// 	  	url 	: 'funcQuery.php',
+	// 	  	data 	: {pid:$('#product_id').val(), st:$('#pmStatus').val(), action:'changeStpm'},
+	// 	  	success: function(data) {
+	// 	        	if (data == 'true') {
+	// 	        		location.reload();
+	// 	        	} else {
+	// 	        		console.log(data);
+	// 	        	}        	
+	// 	        }
+	// 	});
+	// }
 
-	function delP(pid)
+	function delr(review_id)
     {
-    	$('#p_id').val(pid);
+    	$('#review_id').val(review_id);
     	$('#modaldelete').modal('show');
     }
 
-     function deleteProduct()
+     function deletereview()
     {
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {pid:$('#p_id').val(), action:'delProduct'},
+		  	data 	: {review_id:$('#review_id').val(), action:'delreview'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

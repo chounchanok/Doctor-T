@@ -135,7 +135,7 @@
                                                     <div class="col-md-6">
                                                         <div class="img-shadow">
                                                             <a class="popup-youtube"
-                                                                href="<?php echo $_frame->link; ?>">
+                                                                href="<?php echo $_frame->link; ?>&mute=1&autoplay=1&loop=1&rel=0&controls=1">
 
                                                             <img src="images/reviews/<?php echo $_frame->id; ?>/<?php echo $_frame->img_cover; ?>" class="img-responsive">
                                                             </a>

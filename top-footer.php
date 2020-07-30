@@ -1,3 +1,9 @@
+
+<?php 
+            include 'init.php';
+            $review_detail1 = review_detail_list();
+        ?>
+
     <section class="topfooter">
         <div class="container">
             <div class="row padding-bottom-15">
