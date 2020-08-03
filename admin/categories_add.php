@@ -7,7 +7,7 @@
 	<meta name="description" content="bootstrap admin template">
 	<meta name="author" content="">
 
-	<title>Categories Add | General S </title>
+	<title>Categories Add | Dcotor T </title>
 
 	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 	<link rel="shortcut icon" href="../assets/images/logo.png">
@@ -84,10 +84,10 @@
 				                  	<label class="form-control-label" for="name">Name</label>
 				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
 				                </div>
-								<div class="form-group form-material" data-plugin="formMaterial">
+								<!-- <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="short_desc">Short Description</label>
 				                  	<input type="text" class="form-control" id="short_desc" name="short_desc" placeholder="Short Description" required>
-				                </div>
+				                </div> -->
 				                <div class="text-right">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>

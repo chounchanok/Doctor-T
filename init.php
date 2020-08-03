@@ -114,6 +114,217 @@ function banner_list()
 	return query($sql);
 }
 
+function review_detail_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_reviews_detail
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function celeb_topfooter_list()
+{
+	$sql = "SELECT *
+			FROM tbl_celeds
+			WHERE is_active = '1' AND is_selected = '1' ";
+	
+	return query($sql);
+}
+
+function before_topfooter_list()
+{
+	$sql = "SELECT *
+			FROM tbl_before_after_detail
+			WHERE is_active = '1' AND is_selected = '1' ";
+	
+	return query($sql);
+}
+
+function celebids_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_celeds
+				WHERE is_active = '1' ";
+	
+	return query($sql);
+}
+
+function review_detail_list_wh($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM tbl_reviews_detail
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function news__list_sh($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM tbl_service
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function befors_list_sh($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function celeb_list_sh($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM tbl_celeds
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function banner_before_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_banner_before_after
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 1
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_two_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 2
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_tree_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 3
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_four_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 4
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_five_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 5
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_six_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 6
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_seven_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 7
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function before_eng_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 8
+				ORDER BY id ASC ";
+	
+	return query($sql);
+}
+
+function before_ning_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_before_after_detail
+				WHERE is_active = '1' AND categories = 9
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function rands_list()
+{
+	$sql	= "SELECT * FROM `tbl_before_after_detail` WHERE categories <> 8 AND categories <> 9 ORDER BY RAND( )";
+	
+	return query($sql);
+}
+
+function rands_before_list()
+{
+	$sql	= "SELECT * FROM `tbl_before_after_detail` WHERE categories <> 8 AND categories <> 9 ORDER BY RAND( )";
+	
+	return query($sql);
+}
+
 function reviews_list()
 {
 	$sql	= "SELECT *
@@ -134,11 +345,49 @@ function reviews_list_page($limit)
 	return query($sql);
 }
 
-function newsdetail_list()
+function newsdetail_all_list()
 {
 	$sql	= "SELECT *
 				FROM tbl_service
 				WHERE is_active = '1'
+				ORDER BY id DESC";
+	
+	return query($sql);
+}
+
+function newsdetail_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_service
+				WHERE is_active = '1' AND is_recommend = '1'
+				ORDER BY id DESC";
+	
+	return query($sql);
+}
+
+function newsdetail_topfooter_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_service
+				WHERE is_active = '1' AND is_selected = '1' ";
+	
+	return query($sql);
+}
+
+function promotion_topfooter_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_promotion
+				WHERE is_active = '1' AND is_selected = '1' ";
+	
+	return query($sql);
+}
+
+function innovation_list()
+{
+	$sql	= "SELECT *
+				FROM tbl_service
+				WHERE is_active = '1' AND is_innovation = '1'
 				ORDER BY id DESC";
 	
 	return query($sql);
@@ -373,6 +622,132 @@ function product_id1()
 	$result = query($sql);
 
 	return (!empty($result)) ? current($result) : false;
+}
+
+function price_list_id1()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '1' ";
+	
+	return query($sql);	
+}
+
+function price_list_id2()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '2' ";
+	
+	return query($sql);	
+}
+
+function price_list_id3()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '3' ";
+	
+	return query($sql);	
+}
+
+function price_list_id4()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '4' ";
+	
+	return query($sql);	
+}
+
+function price_list_id5()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '5' ";
+	
+	return query($sql);	
+}
+
+function price_list_id6()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '6' ";
+	
+	return query($sql);	
+}
+
+function price_list_id7()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '7' ";
+	
+	return query($sql);	
+}
+
+function price_list_id8()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '8' ";
+	
+	return query($sql);	
+}
+
+function price_list_id9()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '9' ";
+	
+	return query($sql);	
+}
+
+function price_list_id10()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '10' ";
+	
+	return query($sql);	
+}
+
+function price_list_id11()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '11' ";
+	
+	return query($sql);	
+}
+
+function price_list_id12()
+{	
+	$sql	= "SELECT *
+				FROM tbl_prices
+				WHERE is_active = '1' AND grouping = '12' ";
+	
+	return query($sql);	
+}
+
+function celebs_list()
+{	
+	$sql	= "SELECT *
+				FROM tbl_celeds
+				WHERE is_active = '1' ";
+	
+	return query($sql);
+}
+
+function promotion_page_list()
+{	
+	$sql	= "SELECT *
+				FROM tbl_promotion
+				WHERE is_active = 1 ";
+	
+	return query($sql);
 }
 
 function product_id2()

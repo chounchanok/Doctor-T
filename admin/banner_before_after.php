@@ -52,7 +52,7 @@
 
 	<?php $current_file = basename(__FILE__); ?>
 	<?php include 'header.php'; ?>
-	<?php $banner_list = banner_list(); ?>
+	<?php $banner_before_after_list = banner_before_after_list(); ?>
 
 	<!-- Page -->
 	<div class="page">
@@ -72,7 +72,7 @@
 			                  		<div class="fixed-table-toolbar">
 			                  			<div class="bs-bars pull-left">
 			                  				<div class="btn-group hidden-sm-down" id="exampleToolbar" role="group">
-							                    <button type="button" class="btn btn-success btn-outline btn-sm" onclick="window.location.href = 'banner_add.php';">
+							                    <button type="button" class="btn btn-success btn-outline btn-sm" onclick="window.location.href = 'banner_before_after_add.php';">
 							                      	<i class="icon wb-plus" aria-hidden="true"></i> Add banner-before-after
 							                    </button>
 			                  				</div>
@@ -92,10 +92,6 @@
 			                    							<div class="th-inner ">Name</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
-			                    						<th style="" data-field="code">
-			                    							<div class="th-inner ">Link</div>
-			                    							<div class="fht-cell"></div>
-			                    						</th>
 			                    						<th style="" data-field="">
 			                    							<div class="th-inner ">Created</div>
 			                    							<div class="fht-cell"></div>
@@ -106,20 +102,19 @@
 			                    						</th>
 			                    					</tr>
 			                    				</thead>
-			                    				<?php if(!empty($banner_list)) : ?>
+			                    				<?php if(!empty($banner_before_after_list)) : ?>
 			                  					<tbody>
 			                  						<?php 
 													$i = 0;
-													foreach($banner_list as $banner_detail) : 
+													foreach($banner_before_after_list as $banner_before_after_detail) : 
 													?>
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
-			                  							<td style=""><?php echo $banner_detail->name; ?></td>
-			                  							<td style=""><?php echo $banner_detail->link; ?></td>
-			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $banner_detail->create_date ) ); ?></td>
+			                  							<td style=""><?php echo $banner_before_after_detail->name; ?></td>
+			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $banner_before_after_detail->create_date ) ); ?></td>
 			                  							<td>
-			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'banner_edit.php?id=<?php echo $banner_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
-			                  								<!-- <button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $service_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button> -->
+			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'banner_before_after_edit.php?id=<?php echo $banner_before_after_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
+			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $banner_before_after_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
 			                  							</td> 
 			                  						</tr>
 			                  						<?php
@@ -178,7 +173,7 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="s_id" name="s_id">
+					<input type="hidden" id="bannerba_id" name="bannerba_id">
 					<button type="button" class="btn btn-success" onclick="deleteService()"><i class="fa fa-check"></i> Confirm</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
@@ -261,9 +256,9 @@
 		});
 	}
 
-	function delS(sid)
+	function delS(bannerba_id)
     {
-    	$('#s_id').val(sid);
+    	$('#bannerba_id').val(bannerba_id);
     	$('#modaldelete').modal('show');
     }
 
@@ -272,7 +267,7 @@
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {sid:$('#s_id').val(), action:'delService'},
+		  	data 	: {bannerba_id:$('#bannerba_id').val(), action:'delbannerbe'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

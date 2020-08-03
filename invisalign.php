@@ -42,6 +42,10 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $befor_eng_list = before_eng_list();
+        ?>
         <section class="banner-invisalign">
             <img src="images/invisalign-banner.jpg" class="img-responsive">
         </section>
@@ -180,41 +184,26 @@
 
 
         <section class="detail-teeth margin-top-20 padding-bottom-30" id="defaultopen">
-            <div class="container">
+            <div class="container">       
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                <?php foreach ($befor_eng_list as $before_eng_detail) : ?>
+                    <div id="myList" class="col-lg-6 col-md-6">
+                        <a href="before-after-detail?id=<?php echo $before_eng_detail->id; ?>">
                         <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                            <img src="images/before_after/<?php echo $before_eng_detail->id; ?>/<?php echo $before_eng_detail->img_cover; ?>" class="img-responsive">
+                            <?php echo html_entity_decode($before_eng_detail->dsc); ?>
                         </div>
+                       </a> 
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach ?> 
+                </div>            
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <button class="button-showmore">Show more</button>
+                        <button class="button-showmore" id="loadMore">Show more</button>
                     </div>
                 </div>
             </div>
         </section>
-
         <?php 
             include 'top-footer.php';
             include 'footer.php';
@@ -237,6 +226,18 @@
                 removalDelay: 160,
                 preloader: false,
                 fixedContentPos: false,
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            x = 4;
+            $('#myList div').slice(0, 4).show();
+            $('#loadMore').on('click', function (e) {
+                console.log(e);
+                e.preventDefault();
+                x = x + 4;
+                $('#myList div').slice(0, x).slideDown();
             });
         });
     </script>

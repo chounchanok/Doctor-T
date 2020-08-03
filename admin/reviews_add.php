@@ -7,7 +7,7 @@
 	<meta name="description" content="bootstrap admin template">
 	<meta name="author" content="">
 
-	<title>Reviews Add | General S </title>
+	<title>Reviews Add | Doctor T </title>
 
 	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 	<link rel="shortcut icon" href="../assets/images/logo.png">
@@ -82,7 +82,7 @@
 			            <div class="panel-heading">
 			              <h3 class="panel-title">Reviews Add</h3>
 			            </div>
-				<?php print_r ($_SESSION['user']['username']); ?>
+				
 
 			            <div class="panel-body container-fluid">
 			              	<form id="productAdd" name="productAdd" class="form-horizontal" method="post" enctype="multipart/form-data">

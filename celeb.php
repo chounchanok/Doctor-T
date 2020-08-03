@@ -42,6 +42,10 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $celebsrt_list = celebs_list();
+        ?>
         <section class="banner-celeb">
             <div class="">
                 <img src="images/celeb-banner.jpg" class="img-responsive">
@@ -52,98 +56,31 @@
                 <h1>Celebrities at Doctor T</h1>
             </div>
         </section>
+
         <section class="review-detail">
             <div class="container">
+                <div id="myList" class="row">
+                <?php foreach ($celebsrt_list as $celebs_detail) : ?> 
+                    <div class="col-lg-4 col-md-6">                 
+                        
+                            <img src="images/celebss/<?php echo $celebs_detail->id; ?>/<?php echo $celebs_detail->img_cover; ?>" class="img-responsive">
+                      
+                        <a href="celeb-detail?id=<?php echo $celebs_detail->id; ?>">
+                            <div class="content-review">
+                                <h4><?php echo $celebs_detail->name; ?></h4>
+                                <hr>
+                                <?php echo html_entity_decode($celebs_detail->dsc); ?>
+                            </div>
+                        </a>
+                    </div>
+                
+                <?php endforeach ?>
+                </div> 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                    <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=ztLDGEB4lTA">
-                        <img src="images/celeb/celeb (1).png" class="img-responsive">
-                    </a>
-                    <a href="celeb-detail">
-                        <div class="content-review">
-                            <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                            <hr>
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยว                                
-                            </p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=ztLDGEB4lTA">
-                            <img src="images/celeb/celeb (2).png" class="img-responsive">
-                        </a>
-                        <a href="celeb-detail">
-                            <div class="content-review">
-                                <h4>MR. NAJJIAKJ JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยว                                
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=ztLDGEB4lTA">
-                            <img src="images/celeb/celeb (3).png" class="img-responsive">
-                        </a>    
-                        <a href="celeb-detail">
-                            <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยว                                
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                    <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=ztLDGEB4lTA">
-                        <img src="images/celeb/celeb (1).png" class="img-responsive">
-                    </a>
-                    <a href="celeb-detail">
-                        <div class="content-review">
-                            <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                            <hr>
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยว                                
-                            </p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=ztLDGEB4lTA">
-                            <img src="images/celeb/celeb (2).png" class="img-responsive">
-                        </a>
-                        <a href="celeb-detail">
-                            <div class="content-review">
-                                <h4>MR. NAJJIAKJ JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยว                                
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=ztLDGEB4lTA">
-                            <img src="images/celeb/celeb (3).png" class="img-responsive">
-                        </a>    
-                        <a href="celeb-detail">
-                            <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยว                                
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
                     <div class="col-lg-12 text-center">
-                        <button class="button-showmore">Show more</button>
+                        <button class="button-showmore" id="loadMore">Show more</button>
                     </div>
-                </div>
+                </div>                                 
             </div>
         </section>
         <?php 
@@ -168,6 +105,15 @@
                 removalDelay: 160,
                 preloader: false,
                 fixedContentPos: false,
+            });
+        });
+        $(function () {
+            x = 12;
+            $('#myList div').slice(0, 12).show();
+            $('#loadMore').on('click', function (e) {
+                e.preventDefault();
+                x = x + 6;
+                $('#myList div').slice(0, x).slideDown();
             });
         });
     </script>

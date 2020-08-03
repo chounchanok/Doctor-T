@@ -104,7 +104,7 @@
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>
-						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline"="window.location.href = 'news_detail.php';">
+						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'news_detail.php';">
 						              	<span><i class="icon wb-close" aria-hidden="true"></i> Close</span>
 						            </button>
           						</div>

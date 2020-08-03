@@ -42,6 +42,11 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php
+            include 'init.php';
+            $review_detail1_wh = review_detail_list_wh($_GET['id']);
+            $review_detail1 = review_detail_list();
+        ?>
         <section class="banner-review">
             <div class="container">
                 <img src="images/bannerreview.png" class="img-responsive">
@@ -56,22 +61,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                            <img src="images/BIG38736.jpg" class="img-responsive">
-                        </a>
+                        <?php 
+                            $ck_vdo = $review_detail1_wh->link;
+                            if($ck_vdo == TRUE){
+                        ?>
+                            <iframe class="video-width" width="560" height="315" src="<?php echo $review_detail1_wh->link; ?>" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="col-lg-12">
+                            
+                                <div class="detail-review">
+                                    <h2><?php echo $review_detail1_wh->name; ?></h2>
+                                    <hr>
+                                    <?php echo html_entity_decode($review_detail1_wh->dsc); ?>
+                                </div>
+                            </div>
+                        <?php }else{ ?>
+                        <img src="images/review_detail/<?php echo $review_detail1_wh->id; ?>/<?php echo $review_detail1_wh->img_cover; ?>" class="img-responsive">
                     </div>
                     <div class="col-lg-12">
                         <div class="detail-review">
-                            <h2>MISS NAJDKD JFASJFJKSHDH </h2>
+                            <h2><?php echo $review_detail1_wh->name; ?></h2>
                             <hr>
-                            <h5>รายงานการวิจัย ฉบับนี้เป็นหารนำเสนอข้อมูลที่ได้รวบรวมจากแหล่งต่างๆ ที่น่าเชื่อถือในเชิงวิเคราะห์ เพื่อต้องการเผยแพร่เพื่อประโยชน์ด้สนการแลกเปลี่ยนความรู้
-                                และประโยชน์แก่ส่วนรวม ไม่ได้เจตนาแนะนำข้อมูลเพื่อการวิจัยโรคหรือการรักษาโรค ตลอดจนไม่ใช่เพื่อการนำข้อมูลไปใช้ในเชิงพาณิชย์หรือเจตนาเอื้อ
-                                ผลประโยชน์ธุรกิจใดๆ ศูนย์วิจัยสุขภาพกรุงเทพ จึงไม่รับรองความถูกต้องครบถ้วน สมบูรณ์ และเป็นปัจจุบันของข้อมูลเกี่ยวกับยา โรค สาเหตุ อาการ
-                                วิธีการดูแลรักษา
-                            </h5>
+                            <h5><?php echo html_entity_decode($review_detail1_wh->dsc); ?></h5>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -79,117 +95,23 @@
                             <hr>
                         </div>
                     </div>
+                    <?php foreach ($review_detail1 as $review_list) : ?>
                     <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (1).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">
+                            <!-- <a class="popup-youtube" href="<?php echo $review_list->link; ?>"> -->
+                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
+                            <!-- </a> -->
+                            <a href="review-detail?id=<?php echo $review_list->id; ?>">
                             <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
+                                <h4><?php echo $review_list->name; ?></h4>
                                 <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
+                                <?php echo html_entity_decode($review_list->dsc); ?>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (2).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">                            
-                                <div class="content-review">
-                                <h4>MR. NAJJIAKJ FFJDJIDIDDIDI</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (3).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">                            
-                                <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (4).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">
-                                <div class="content-review">
-                                <h4>MR. NAJJIAKJ FFJDJIDIDDIDI</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (5).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">                            
-                                <div class="content-review">
-                                <h4>MISS NAJDKD JFASJFJKSHDH</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
+                    <?php endforeach ?>
 
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                                <img src="images/review/review (6).png" class="img-responsive">
-                            </a>
-                            <a href="review-detail">
-                                <div class="content-review">
-                                <h4>MR. NAJJIAKJ FFJDJIDIDDIDI</h4>
-                                <hr>
-                                <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign 
-                                    รวมถึงอีเมลเกี่ยวกับเคล็ดลับที่เป็นประโยชน์ ผู้ให้บริการใกล้บ้าน และข่าวสารล่าสุดเกี่ยวกับผลิตภัณฑ์ 
-                                    นอกจากนี้ข้าพเจ้ายังขอให้เจ้าหน้าที่ Smile Concierge ของบริษัท อะไลน์ เทคโนโลยี (ประเทศไทย) 
-                                    จำกัด ติดต่อข้าพเจ้า เพื่อนัดหมายขอคำปรึกษากับทันตแพทย์ที่ผ่านการฝึกอบรมจาก Invisalign 
-                                    ที่อยู่ใกล้บ้านของข้าพเจ้าด้วย เราเคารพความเป็นส่วนตัวของท่าน และจะไม่จำหน่ายหรือยินยอมให้บุคคลที่สาม
-                                    เข้าข้อมูลที่ระบุตัวตนของท่านอย่างเด็ดขาด หากต้องการข้อมูลเพิ่มเติม
-                                </p>
-                            </div>
-                        </a>
-                    </div>
                     <div class="col-lg-12 text-center">
-                        <button class="button-showmore" onclick="window.history.back();"><< Back</button>
+                        <a class="button-showmore" href="review"><< BACK</a>
                     </div>
                 </div>
             </div>

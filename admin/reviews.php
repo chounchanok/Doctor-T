@@ -178,7 +178,7 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="p_id" name="p_id">
+					<input type="hidden" id="vdo_id" name="vdo_id">
 					<button type="button" class="btn btn-success" onclick="deleteProduct()"><i class="fa fa-check"></i> Confirm</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
@@ -261,9 +261,9 @@
 		});
 	}
 
-	function delP(pid)
+	function delP(vdo_id)
     {
-    	$('#p_id').val(pid);
+    	$('#vdo_id').val(vdo_id);
     	$('#modaldelete').modal('show');
     }
 
@@ -272,7 +272,7 @@
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {pid:$('#p_id').val(), action:'delProduct'},
+		  	data 	: {vdo_id:$('#vdo_id').val(), action:'delvdohome'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

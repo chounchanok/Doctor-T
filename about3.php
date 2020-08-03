@@ -69,7 +69,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <iframe class="video-width" src="https://www.youtube.com/embed/DRkbx_2ynOs?autoplay=1" frameborder="0" autoplay allowfullscreen> </iframe>
+                        <iframe class="video-width" src="https://www.youtube.com/embed/DRkbx_2ynOs?autoplay=1" allow="autoplay" frameborder="0" allowfullscreen> </iframe>
                     </div>
                 </div>
             </div>

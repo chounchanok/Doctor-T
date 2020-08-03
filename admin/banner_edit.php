@@ -99,16 +99,11 @@
 				                  	<label class="form-control-label" for="title">Name</label>
 				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $service_detail->name; ?>" required>
 				                </div>
-				                <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="short_desc">Short Description</label>
-				                  	<input type="text" class="form-control" id="short_desc" name="short_desc" value="<?php echo $service_detail->short_desc; ?>" required>
-				                </div>
 								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description</label>
-									<textarea class="form-control summernote" rows="4" id="description" name="description">
-										<?php echo $service_detail->description; ?>
-									</textarea>
-								</div>
+				                  	<label class="form-control-label" for="title">Link</label>
+				                  	<input type="text" class="form-control" id="link" name="link" value="<?php echo $service_detail->link; ?>" required>
+				                </div>
+								
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Image</label>
 			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/' . $service_detail->id . '/' . $service_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
@@ -119,8 +114,8 @@
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>
-						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'service.php';">
-						              	<span><i class="icon wb-close" aria-hidden="true"></i> Close</span>
+						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'banner.php';">
+						              	<span><i class="icon wb-close" aria-hidden="true"></i>Close</span>
 						            </button>
           						</div>
 			              	</form>

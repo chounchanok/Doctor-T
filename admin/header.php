@@ -5,11 +5,13 @@ require_once 'auth.php';
 <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
 	<div class="navbar-header">
-		<button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+		<button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
+			data-toggle="menubar">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="hamburger-bar"></span>
 		</button>
-		<button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+		<button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
+			data-toggle="collapse">
 			<i class="icon wb-more-horizontal" aria-hidden="true"></i>
 		</button>
 		<div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
@@ -34,23 +36,25 @@ require_once 'auth.php';
 					<a class="nav-link icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
 						<span class="sr-only">Toggle fullscreen</span>
 					</a>
-				</li>		
+				</li>
 			</ul>
 			<!-- End Navbar Toolbar -->
 
 			<!-- Navbar Toolbar Right -->
 			<ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
 				<li class="nav-item dropdown">
-					<a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="scale-up" role="button">
+					<a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
+						data-animation="scale-up" role="button">
 						<span class="avatar avatar-online">
 							<img src="assets/images/user.jpg" alt="...">
 							<i></i>
 						</span>
 					</a>
 					<div class="dropdown-menu" role="menu">
-						<a class="dropdown-item" href="logout.php" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+						<a class="dropdown-item" href="logout.php" role="menuitem"><i class="icon wb-power"
+								aria-hidden="true"></i> Logout</a>
 					</div>
-				</li>		
+				</li>
 			</ul>
 			<!-- End Navbar Toolbar Right -->
 		</div>
@@ -65,54 +69,129 @@ require_once 'auth.php';
 		<div>
 			<div>
 				<ul class="site-menu" data-plugin="menu">
-					<li class="site-menu-item <?php echo ($current_file == 'index.php') ? 'active' : ''; ?>">
-						<a class="animsition-link" href="index.php">
+					
+
+					<li
+						class="site-menu-item has-sub <?php echo ( in_array($current_file, array('banner.php', 'banner_add.php', 'banner_edit.php','reviews.php', 'reviews_add.php', 'reviews_edit.php') ) ) ? 'active open' : ''; ?>">
+						<a href="javascript:void(0)">
 							<i class="site-menu-icon icon fa-home" aria-hidden="true"></i>
-							<span class="site-menu-title">Home</span>
+							<span class="site-menu-title">Home Page</span>
+							<span class="site-menu-arrow"></span>
 						</a>
+						<ul class="site-menu-sub">
+
+							<li
+								class="site-menu-item <?php echo ( in_array($current_file, array('banner.php', 'banner_add.php', 'banner_edit.php') ) ) ? 'active' : ''; ?>">
+								<a class="animsition-link" href="banner.php">
+									<i class="site-menu-icon icon fa fa-picture-o" aria-hidden="true"></i>
+									<span class="site-menu-title">Slide Home</span>
+								</a>
+							</li>
+
+							<li
+								class="site-menu-item <?php echo ( in_array($current_file, array('reviews.php', 'reviews_add.php', 'reviews_edit.php') ) ) ? 'active' : ''; ?>">
+								<a class="animsition-link" href="reviews.php">
+									<i class="site-menu-icon icon fa-video-camera" aria-hidden="true"></i>
+									<span class="site-menu-title">Video Home Page</span>
+								</a>
+							</li>
+
+
+						</ul>
 					</li>
-					<li class="site-menu-item <?php echo ( in_array($current_file, array('banner.php', 'banner_add.php', 'banner_edit.php') ) ) ? 'active' : ''; ?>">
-						<a class="animsition-link" href="banner.php">
-							<i class="site-menu-icon icon fa fa-picture-o" aria-hidden="true"></i>
-							<span class="site-menu-title">Slide</span>
-						</a>
-					</li>
-					<!-- <li class="site-menu-item <?php echo ( in_array($current_file, array('slide.php', 'slide_add.php', 'slide_edit.php') ) ) ? 'active' : ''; ?>">
-						<a class="animsition-link" href="slide.php">
-							<i class="site-menu-icon icon fa-image" aria-hidden="true"></i>
-							<span class="site-menu-title">Slide</span>
-						</a>
-					</li> -->
-					<!-- <li class="site-menu-item <?php echo ( in_array($current_file, array('categories.php', 'categories_add.php', 'categories_edit.php') ) ) ? 'active' : ''; ?>">
-						<a class="animsition-link" href="categories.php">
-							<i class="site-menu-icon icon fa-sitemap" aria-hidden="true"></i>
-							<span class="site-menu-title">Categories</span>
-						</a>
-					</li> -->
-					<li class="site-menu-item <?php echo ( in_array($current_file, array('reviews.php', 'reviews_add.php', 'reviews_edit.php') ) ) ? 'active' : ''; ?>">
-						<a class="animsition-link" href="reviews.php">
-							<i class="site-menu-icon icon fa-product-hunt" aria-hidden="true"></i>
-							<span class="site-menu-title">Reviews</span>
-						</a>
-					</li>
-					<li class="site-menu-item <?php echo ( in_array($current_file, array('service.php', 'service_add.php', 'service_edit.php') ) ) ? 'active' : ''; ?>">
+
+
+
+					<li
+						class="site-menu-item <?php echo ( in_array($current_file, array('news_detail.php', 'newsdetail_add.php', 'news_detail_edit.php') ) ) ? 'active' : ''; ?>">
 						<a class="animsition-link" href="news_detail.php">
 							<i class="site-menu-icon icon fa fa-newspaper-o" aria-hidden="true"></i>
 							<span class="site-menu-title">Update News</span>
 						</a>
 					</li>
-					<!-- <li class="site-menu-item <?php echo ( in_array($current_file, array('custommer.php') ) ) ? 'active' : ''; ?>">
-						<a class="animsition-link" href="custommer.php">
-							<i class="site-menu-icon icon fa fa-address-book" aria-hidden="true"></i>
-							<span class="site-menu-title">User Download</span>
+
+
+
+					<li
+						class="site-menu-item <?php echo ( in_array($current_file, array('review_detail.php', 'review_detail_add.php', 'review_detail_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="review_detail.php">
+							<i class="site-menu-icon icon fa fa-pencil-square-o" aria-hidden="true"></i>
+							<span class="site-menu-title">Review Detail</span>
 						</a>
-					</li> -->
+					</li>
+
+
+					<li
+						class="site-menu-item has-sub <?php echo ( in_array($current_file, array('categories.php', 'categories_add.php', 'categories_edit.php','banner_before_after.php', 'banner_before_after_add.php', 'banner_before_after_edit.php','before_after.php', 'before_after_add.php', 'before_after_edit.php') ) ) ? 'active open' : ''; ?>">
+						<a href="javascript:void(0)">
+							<i class="site-menu-icon icon fa-user-md" aria-hidden="true"></i>
+							<span class="site-menu-title">Before After Page</span>
+							<span class="site-menu-arrow"></span>
+						</a>
+						<ul class="site-menu-sub">
+
+							<li
+								class="site-menu-item <?php echo ( in_array($current_file, array('categories.php', 'categories_add.php', 'categories_edit.php') ) ) ? 'active' : ''; ?>">
+								<a class="animsition-link" href="categories.php">
+									<i class="site-menu-icon icon fa-sitemap" aria-hidden="true"></i>
+									<span class="site-menu-title">Categories</span>
+								</a>
+							</li>
+							<li
+								class="site-menu-item <?php echo ( in_array($current_file, array('banner_before_after.php', 'banner_before_after_add.php', 'banner_before_after_edit.php') ) ) ? 'active' : ''; ?>">
+								<a class="animsition-link" href="banner_before_after.php">
+									<i class="site-menu-icon icon fa fa-picture-o" aria-hidden="true"></i>
+									<span class="site-menu-title">Banner Page Before After</span>
+								</a>
+							</li>
+							<li
+								class="site-menu-item <?php echo ( in_array($current_file, array('before_after.php', 'before_after_add.php', 'before_after_edit.php') ) ) ? 'active' : ''; ?>">
+								<a class="animsition-link" href="before_after.php">
+									<i class="site-menu-icon icon fa fa-pie-chart" aria-hidden="true"></i>
+									<span class="site-menu-title">Before After</span>
+								</a>
+							</li>
+
+						</ul>
+					</li>
+
+
+
+
+
+					<li
+						class="site-menu-item <?php echo ( in_array($current_file, array('promotion.php', 'promotion_add.php', 'promotion_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="promotion.php">
+							<i class="site-menu-icon icon fa-bullhorn" aria-hidden="true"></i>
+							<span class="site-menu-title">Promotion</span>
+						</a>
+					</li>
+
+
+
+					<li
+						class="site-menu-item <?php echo ( in_array($current_file, array('celeb.php', 'celeb_add.php', 'celeb_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="celeb.php">
+							<i class="site-menu-icon icon fa fa-group" aria-hidden="true"></i>
+							<span class="site-menu-title">Celebrities</span>
+						</a>
+					</li>
+
+					<li
+						class="site-menu-item <?php echo ( in_array($current_file, array('price.php','price_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="price.php">
+							<i class="site-menu-icon icon fa fa-money" aria-hidden="true"></i>
+							<span class="site-menu-title">Price</span>
+						</a>
+					</li>
+
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="site-menubar-footer">
-		<a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Settings">
+		<a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip"
+			data-original-title="Settings">
 			<span class="icon wb-settings" aria-hidden="true"></span>
 		</a>
 		<a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Lock">

@@ -42,6 +42,21 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $price_one_list = price_list_id1();
+            $price_two_list = price_list_id2();
+            $price_tree_list = price_list_id3();
+            $price_four_list = price_list_id4();
+            $price_five_list = price_list_id5();
+            $price_six_list = price_list_id6();
+            $price_seven_list = price_list_id7();
+            $price_eng_list = price_list_id8();
+            $price_ning_list = price_list_id9();
+            $price_ten_list = price_list_id10();
+            $price_elwn_list = price_list_id11();
+            $price_tvn_list = price_list_id12();
+        ?>
         <section class="banner-services">
                 <img src="images/services-banner.jpg" class="img-responsive">
         </section>
@@ -63,70 +78,72 @@
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ตรวจสุขภาพช่องปาก Comprehensive Oral Evaluation</td>
-                            <td class="text-right">Free</td>
+                            <td><?php echo $price_one_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_one_list[0]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ปรึกษาจัดฟัน</td>
-                            <td class="text-right">Free</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="font-italic">เอ็กซ์เรย์</td>
-                        </tr>
-                        <tr class="grey-light">
-                            <td></td>
-                            <td>การเอ็กซ์เรย์ดิจิตอล Periapical Film, Bite wing</td>
-                            <td class="text-right">250.00</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>เอ็กซ์เรย์จัดฟันดิจิตอล Orthopantomogram</td>
-                            <td class="text-right">1000.00</td>
-                            <td></td>
-                        </tr>
-                        <tr class="grey-light">
-                            <td></td>
-                            <td>เอ็กซ์เรย์จัดฟันดิจิตอล Lateral Cephalometric</td>
-                            <td class="text-right">1000.00</td>
+                            <td><?php echo $price_one_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_one_list[1]->price; ?></td>
                             <td></td>
                         </tr>
 
                         <tr>
+                            <td colspan="4" class="font-italic">เอ็กซ์เรย์</td>
+                        </tr>
+
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_two_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_two_list[0]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_two_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_two_list[1]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_two_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_two_list[2]->price; ?></td>
+                            <td></td>
+                        </tr>
+ 
+                        <tr>
                             <td colspan="4" class="font-italic">อุดฟัน</td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>อุดฟันด้วย Composit 1 ด้าน</td>
-                            <td class="text-right">800.00</td>
-                            <td class="text-center">รวม GI Base</td>
+                            <td><?php echo $price_tree_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tree_list[0]->price; ?></td>
+                            <td class="text-center"><?php echo $price_tree_list[0]->remark; ?></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>อุดฟันด้วย Composit 2 ด้าน</td>
-                            <td class="text-right">1400.00</td>
-                            <td  class="text-center">รวม GI Base</td>
+                            <td><?php echo $price_tree_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tree_list[1]->price; ?></td>
+                            <td class="text-center"><?php echo $price_tree_list[1]->remark; ?></td>
+                        </tr>
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_tree_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tree_list[2]->price; ?></td>
+                            <td class="text-center"><?php echo $price_tree_list[2]->remark; ?></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>อุดฟันด้วย Composit 3 ด้าน</td>
-                            <td class="text-right">1800.00</td>
-                            <td class="text-center">รวม GI Base</td>
+                            <td><?php echo $price_tree_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tree_list[3]->price; ?></td>
+                            <td class="text-center"><?php echo $price_tree_list[3]->remark; ?></td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>อุดฟันด้วย Composit 4 ด้านหรือมากกว่า</td>
-                            <td class="text-right">2000.00</td>
-                            <td class="text-center">รวม GI Base</td>
-                        </tr>
-                        <tr class="grey-light">
-                            <td></td>
-                            <td>ปิดช่องว่างฟันฟันห่าง ด้วย Composit / ต่อช่อง</td>
-                            <td class="text-right">2000-3000</td>
-                            <td></td>
+                            <td><?php echo $price_tree_list[4]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tree_list[4]->price; ?></td>
+                            <td class="text-center"><?php echo $price_tree_list[4]->remark; ?></td>
                         </tr>
 
                         <tr>
@@ -134,299 +151,307 @@
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ถอนฟันน้ำนม</td>
-                            <td class="text-right">500.00</td>
+                            <td><?php echo $price_four_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[0]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ถอนฟัน (ฟันหน้า ฟันกรามน้อย)</td>
-                            <td class="text-right">800 - 1500</td>
-                            <td class="text-center">รวมแคะราก</td>
-                        </tr>
-                        <tr class="grey-light">
+                            <td><?php echo $price_four_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[1]->price; ?></td>
                             <td></td>
-                            <td>ถอนฟัน กรามใหญ่</td>
-                            <td class="text-right">800 - 1500</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>ถอนฟันคุด</td>
-                            <td class="text-right">1500 - 2000</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ถอนฟันโดยการผ่าตัดเปิดเหงือก</td>
-                            <td class="text-right">1500 - 2000</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
-                        </tr>
-                        <tr  class="grey-dark">
+                            <td><?php echo $price_four_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[2]->price; ?></td>
                             <td></td>
-                            <td>ผ่าฟันคุด แบบง่าย พร้อมเย็บ (Soft tissue)</td>
-                            <td class="text-right">2500 - 4000</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
+                        </tr>
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_four_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[3]->price; ?></td>
+                            <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ผ่าฟันคุด แบบยาก พร้อมเย็บ (Complete bony)</td>
-                            <td class="text-right">4000 - 6000</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
-                        </tr>
-                        <tr  class="grey-dark">
+                            <td><?php echo $price_four_list[4]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[4]->price; ?></td>
                             <td></td>
-                            <td>ผ่าฟันผัง</td>
-                            <td class="text-right">4000 - 6000</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
                         </tr>
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_four_list[5]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[5]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_four_list[6]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[6]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_four_list[7]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_four_list[7]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        
                         <tr>
                             <td colspan="4" class="font-italic">รักษาโรคเหงือก / ตกแต่งเหงือก</td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>เกลารากฟัน ต่อซี่</td>
-                            <td class="text-right">400.00</td>
+                            <td><?php echo $price_five_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_five_list[0]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>เกลารากฟัน ต่อ Quadrant</td>
-                            <td class="text-right">1500 - 2500</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
+                            <td><?php echo $price_five_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_five_list[1]->price; ?></td>
+                            <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ตกแต่งเหงือกเพิ่มความยาวฟัน 6-8 ซี่</td>
-                            <td class="text-right">5000 - 8000</td>
+                            <td><?php echo $price_five_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_five_list[2]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ตกแต่งเหงือกเพิ่มความยาวฟัน 1 ซี่</td>
-                            <td class="text-right">1500.00</td>
+                            <td><?php echo $price_five_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_five_list[2]->price; ?></td>
                             <td></td>
                         </tr>
+                        
                         <tr>
                             <td colspan="4" class="font-italic">รักษารากฟันแท้</td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>รักษารากคลองรากฟัน ฟันหน้า</td>
-                            <td class="text-right">6500 - 8500</td>
+                            <td><?php echo $price_six_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_six_list[0]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>รักษารากคลองรากฟัน ฟันกรามน้อย</td>
-                            <td class="text-right">8500 - 9500</td>
+                            <td><?php echo $price_six_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_six_list[1]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>รักษารากคลองฟัน ฟันหลัง</td>
-                            <td class="text-right">10000 - 13000</td>
+                            <td><?php echo $price_six_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_six_list[2]->price; ?></td>
                             <td></td>
                         </tr>
+
                         <tr>
                             <td colspan="4" class="font-italic">ฟันปลอม แบบติดแน่น</td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>รากฟันเทียม(ยุโรป) IMPLANT</td>
-                            <td class="text-right">85000.00</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>รากฟันเทียม(เกาหลี) IMPLANT</td>
-                            <td class="text-right">55000.00</td>
+                            <td><?php echo $price_seven_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_seven_list[0]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>วีเนียร์ Composite Resin</td>
-                            <td class="text-right">5000.00</td>
+                            <td><?php echo $price_seven_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_seven_list[1]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>เซรามิควีเนียร์ Empress Esthetics</td>
-                            <td class="text-right">13000.00</td>
+                            <td><?php echo $price_seven_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_seven_list[2]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>เซรามิควีเนียร์ EMax</td>
-                            <td class="text-right">15000.00</td>
+                            <td><?php echo $price_seven_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_seven_list[3]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>เซรามิควีเนียร์ Lumineers</td>
-                            <td class="text-right">23000.00</td>
+                            <td><?php echo $price_seven_list[4]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_seven_list[4]->price; ?></td>
                             <td></td>
                         </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_seven_list[5]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_seven_list[5]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        
                         <tr>
                             <td colspan="4" class="font-italic">ฟันปลอม</td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ครอบฟันพอร์ชเลนกับโลหะธรรมดา</td>
-                            <td class="text-right">8000.00</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>ครอบฟันชนิดโลหะผสมทอง > 2%</td>
-                            <td class="text-right">13000.00</td>
+                            <td><?php echo $price_eng_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[0]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ครอบฟันชนิดโลหะผสมทอง > 50%</td>
-                            <td class="text-right">16000.00</td>
+                            <td><?php echo $price_eng_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[1]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ครอบฟันชนิดโลหะผสมทอง > 85%</td>
-                            <td class="text-right">25000.00</td>
-                            <td></td>
-                        </tr>
-                        <tr class="grey-light">
-                            <td></td>
-                            <td>ครอบฟันเซรามิคทั้งซี่ แบบ Emax</td>
-                            <td class="text-right">16000.00</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>ครอบฟันเซรามิคทั้งซี่ แบบ Ceramic</td>
-                            <td class="text-right">18000.00</td>
+                            <td><?php echo $price_eng_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[2]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>เดือยโลหะ หรือ เดือยเรซิน</td>
-                            <td class="text-right">4500.00</td>
+                            <td><?php echo $price_eng_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[3]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ก่อแกนฟัน (Core build up)</td>
-                            <td class="text-right">1500.00</td>
+                            <td><?php echo $price_eng_list[4]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[4]->price; ?></td>
                             <td></td>
                         </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_eng_list[5]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[5]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_eng_list[6]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[6]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_eng_list[7]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_eng_list[7]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        
                         <tr>
                             <td colspan="4" class="font-italic">ฟันปลอมแบบถอดได้</td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ฟันปลอมครึ่งปาก 1 ชิ้น บน หรือล่าง ชิ้นละ</td>
-                            <td class="text-right">15000 - 20000</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>Valplast ฐานพร้อมฟัน 1 ซี่</td>
-                            <td class="text-right">7000.00</td>
+                            <td><?php echo $price_ning_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ning_list[0]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ฟันปลอมบางส่วน ฐานอคริลิก (ฐาน + ฟัน 1-3 ซี่แรก)</td>
-                            <td class="text-right">4000.00</td>
+                            <td><?php echo $price_ning_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ning_list[1]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ฟันปลอมบางส่วน ฐานอคริลิก ซี่ต่อไป</td>
-                            <td class="text-right">500.00</td>
+                            <td><?php echo $price_ning_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ning_list[2]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ฟันปลอมบางส่วน ฐานโลหะ (ฐาน+ฟัน 1-4 ซี่)</td>
-                            <td class="text-right">11000 - 14000</td>
+                            <td><?php echo $price_ning_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ning_list[3]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>เพิ่มซี่ฟัน ซี่ละ</td>
-                            <td class="text-right">500.00</td>
+                            <td><?php echo $price_ning_list[4]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ning_list[4]->price; ?></td>
                             <td></td>
                         </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_ning_list[5]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ning_list[5]->price; ?></td>
+                            <td></td>
+                        </tr>
+
                         <tr>
                             <td colspan="4" class="font-italic">ฟอกสีฟัน</td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>ฟอกสีฟันในคลินิค ZOOM</td>
-                            <td class="text-right">12000.00</td>
-                            <td></td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>ฟอกสีฟันที่บ้าน</td>
-                            <td class="text-right">5500.00</td>
+                            <td><?php echo $price_ten_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ten_list[0]->price; ?></td>
                             <td></td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>Tray ฟอกสีฟัน บน-ล่าง</td>
-                            <td class="text-right">3500.00</td>
+                            <td><?php echo $price_ten_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ten_list[1]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>น้ำยาฟอกสีฟัน 20% หลอดละ</td>
-                            <td class="text-right">800.00</td>
+                            <td><?php echo $price_ten_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ten_list[2]->price; ?></td>
                             <td></td>
                         </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_ten_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_ten_list[3]->price; ?></td>
+                            <td></td>
+                        </tr>
+                       
                         <tr>
                             <td colspan="4" class="font-italic">Misc</td>
                         </tr>
-                        <tr class="grey-light">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>Retainer คู่ละ</td>
-                            <td class="text-right">8000 - 30000</td>
+                            <td><?php echo $price_elwn_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_elwn_list[0]->price; ?></td>
                             <td></td>
                         </tr>
+                        
                         <tr>
                             <td colspan="4" class="font-italic">ทันตกรรมสำหรับเด็ก</td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>ขัดฟัน + เคลือบฟลูออไรด์เจล ในเด็ก</td>
-                            <td class="text-right">500.00</td>
+                            <td><?php echo $price_tvn_list[0]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tvn_list[0]->price; ?></td>
                             <td></td>
                         </tr>
-                        <tr  class="grey-dark">
+                        <tr class="grey-dark">
                             <td></td>
-                            <td>Polpotomy ฟันหน้า, กรามน้อย</td>
-                            <td class="text-right">2000 - 2500</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
-                        </tr>
-                        <tr class="grey-light">
+                            <td><?php echo $price_tvn_list[1]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tvn_list[1]->price; ?></td>
                             <td></td>
-                            <td>Polpotomy ฟันกราม</td>
-                            <td class="text-right">3000 - 3500</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
-                        </tr>
-                        <tr  class="grey-dark">
-                            <td></td>
-                            <td>Pulpectomy ฟันหน้า, กรามน้อย</td>
-                            <td class="text-right">3000 - 3500</td>
-                            <td class="text-center">ประเมินตามความเหมาะสม</td>
                         </tr>
                         <tr class="grey-light">
                             <td></td>
-                            <td>Pulpectomy ฟันกราม</td>
-                            <td class="text-right">2500.00</td>
+                            <td><?php echo $price_tvn_list[2]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tvn_list[2]->price; ?></td>
                             <td></td>
                         </tr>
-
+                        <tr class="grey-dark">
+                            <td></td>
+                            <td><?php echo $price_tvn_list[3]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tvn_list[3]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        <tr class="grey-light">
+                            <td></td>
+                            <td><?php echo $price_tvn_list[4]->dsc; ?></td>
+                            <td class="text-right"><?php echo $price_tvn_list[4]->price; ?></td>
+                            <td></td>
+                        </tr>
+                        
                         <tr class="orage-head">
                             <td colspan="5"><br></td>
                         </tr>

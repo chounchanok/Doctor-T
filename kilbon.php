@@ -42,6 +42,10 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $befor_ning_list = before_ning_list();
+        ?>
         <section class="kilbon-banner">
             <div class="container">
                 <img src="images/kilbon-banner.jpg" class="img-responsive">
@@ -51,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <iframe class="video-width" src="https://www.youtube.com/embed/DRkbx_2ynOs?autoplay=1" frameborder="0" autoplay allowfullscreen> </iframe>
+                        <iframe class="video-width" src="https://www.youtube.com/embed/DRkbx_2ynOs?autoplay=1" allow="autoplay" frameborder="0" allowfullscreen> </iframe>
                     </div>
                 </div>
             </div>
@@ -59,34 +63,20 @@
         <section class="detail-teeth margin-top-20 padding-bottom-30" id="defaultopen">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                <?php foreach ($befor_ning_list as $before_ning_detail) : ?>
+                    <div id="myList" class="col-lg-6 col-md-6">
+                    <a href="before-after-detail?id=<?php echo $before_ning_detail->id; ?>">
                         <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                            <img src="images/before_after/<?php echo $before_ning_detail->id; ?>/<?php echo $before_ning_detail->img_cover; ?>" class="img-responsive">
+                            <?php echo html_entity_decode($before_ning_detail->dsc); ?>
                         </div>
+                       </a> 
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
+                <?php endforeach ?>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <button class="button-showmore">Show more</button>
+                        <button class="button-showmore" id="loadMore">Show more</button>
                     </div>
                 </div>
             </div>
@@ -118,6 +108,18 @@
                 fixedContentPos: false,
             });
         });
+    </script>
+    <script>
+        $(function () {
+                x = 4;
+                $('#myList div').slice(0, 4).show();
+                $('#loadMore').on('click', function (e) {
+                    console.log(e);
+                    e.preventDefault();
+                    x = x + 4;
+                    $('#myList div').slice(0, x).slideDown();
+                });
+            });
     </script>
 </body>
 </html>

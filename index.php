@@ -117,8 +117,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">';
-
-                                    if($box == 1){
+                            ?>
+                                    <?php if($box == 1){
                                         $start = 0;
                                         $end = $limit;
                                         $frame = reviews_list_page($start.','.$end);
@@ -129,43 +129,37 @@
                                     }
 //ครีม
                                     if(!empty($frame)){
-                                        foreach ($frame as $_frame) {
-                                            echo '
+                                        foreach ($frame as $_frame) {?>
                                             <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-6">
+                                                <div class="row padding-bottom-30">
+                                                    <div class="col-md-5">
                                                         <div class="img-shadow">
                                                             <a class="popup-youtube"
-                                                                href="'.$_frame->link.'?autoplay=1">
+                                                                href="<?php echo $_frame->link; ?>">
 
-                                                                <img src="images/index1.jpg" class="img-responsive">
+                                                            <img src="images/reviews/<?php echo $_frame->id; ?>/<?php echo $_frame->img_cover; ?>" class="img-responsive">
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-7">
                                                         <div class="detail-index-slide">
-                                                            <h2>บอกเล่าเรื่องราวของ DR.T โดย</h2>
+                                                            <h2><?php echo $_frame->name; ?></h2>
                                                             <h1>Father Biondi</h1>
-                                                            <h4>President of Saint Louis University<br>USA from
-                                                                1987-2013<br>
-                                                                President Emeritus of Saint Louis University,<br>
-                                                                USA from 2013 - Present</h4>
+                                                            <h4><?php echo html_entity_decode($_frame->desc); ?></h4>
                                                             <hr>
                                                         </div>
+                                                        <button class="button-readmore-index-2">Read more>></button>
                                                     </div>
                                                 </div>
-                                            </div>';
-                                        }
-                                    }
-
-                                    echo '</div>
+                                            </div>
+                                        <?php }
+                                    } ?>
+                                            </div>
                                         </div>
                                     </div>  
-                                </div>';
+                                </div>
 
-                        }
-
-                        ?>
+                        <?php } ?>
 
                     </div>
                           
@@ -210,43 +204,9 @@
                             <h2><?php echo $newsdetail_detail->name; ?></h2>
                             <h5><?php echo $newsdetail_detail->description; ?></h5>
                         </div>
-                        <a class="button-readmore-inno" href="news-detail.php">Read more>></a>
+                        <a class="button-readmore-inno" href="news-detail?id=<?php echo $newsdetail_detail->id; ?>">Read more>></a>
                     </div>
                 </div>
-                <!-- <div class="row padding-bottom-30">
-                    <div class="col-lg-5 col-md-5">
-                        <div class="img-border">
-                            <img src="images/news/innovations2.png" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="detail-news">
-                            <h2>Innovations in orthodontics</h2>
-                            <h5>Invisalign® เป็นส่วนหนึ่งของ Align Technology ซึ่งเป็นบริษัทอุปกรณ์ทางการแพทย์ระดับสากลที่มีผลิตภัณฑ์นวัตกรรมชั้นนำในอุตสาหกรรม
-                            เราต้องการช่วยให้ผู้เชี่ยวชาญทางด้าน
-                            ทันตกรรมทั้งหลายประสบความสำเร็จในการรักษาตามที่คาดหวังไว้และส่งมอบทางเลือกทาง
-                            ทันตกรรมที่ให้ผลการรักษาที่ดีและทันสมัยให้กับผู้ป่วย</h5>
-                        </div>
-                        <a class="button-readmore-inno" href="news-detail.php">Read more>></a>
-                    </div>
-                </div>
-                <div class="row padding-bottom-30">
-                    <div class="col-lg-5 col-md-5">
-                        <div class="img-border">
-                            <img src="images/news/innovations3.png" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="detail-news">
-                            <h2>Innovations in orthodontics</h2>
-                            <h5>Invisalign® เป็นส่วนหนึ่งของ Align Technology ซึ่งเป็นบริษัทอุปกรณ์ทางการแพทย์ระดับสากลที่มีผลิตภัณฑ์นวัตกรรมชั้นนำในอุตสาหกรรม
-                            เราต้องการช่วยให้ผู้เชี่ยวชาญทางด้าน
-                            ทันตกรรมทั้งหลายประสบความสำเร็จในการรักษาตามที่คาดหวังไว้และส่งมอบทางเลือกทาง
-                            ทันตกรรมที่ให้ผลการรักษาที่ดีและทันสมัยให้กับผู้ป่วย</h5>
-                        </div>
-                        <a class="button-readmore-inno" href="news-detail.php">Read more>></a>
-                    </div>
-                </div> -->
                 <?php endforeach ?>
             </div>
         </section>

@@ -43,38 +43,33 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $promotion_list = promotion_page_list();
+        ?>
         <section class="banner-promotion">
             <img src="images/banner/promotion-banner.jpg" class="img-responsive">
         </section>
         <section class="special-promotion">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a title="" class="fancybox-pop fancybox.image" href="images/promotion/promotion (1).png" rel="promotion">
-                            <img src="images/promotion/promotion (1).png" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="col-lg-12">
+            
+                <div class="row"> 
+                <?php foreach ($promotion_list as $promotion_detail) : ?>                        
+                    <div class="col-lg-12">                  
+                        <a title="" class="fancybox-pop fancybox.image" href="images/promotions/<?php echo $promotion_detail->id; ?>/<?php echo $promotion_detail->img_cover; ?>" rel="promotion">
                         <hr class="blue-hr">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a title="" class="fancybox-pop fancybox.image" href="images/promotion/promotion (2).png" rel="promotion">
-                            <img src="images/promotion/promotion (2).png" class="img-responsive">
+                            <img src="images/promotions/<?php echo $promotion_detail->id; ?>/<?php echo $promotion_detail->img_cover; ?>" class="img-responsive">
+                            
                         </a>
                     </div>
-                    <div class="col-lg-12">
-                        <hr class="blue-hr">
-                    </div>
+                    
+                    <!-- <div class="col-lg-12">
+                        
+                        
+                    </div>  -->
+                <?php endforeach ?>                                   
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a title="" class="fancybox-pop fancybox.image" href="images/promotion/promotion (3).png" rel="promotion">
-                            <img src="images/promotion/promotion (3).png" class="img-responsive">
-                        </a>
-                    </div>
-                </div>
+                 
             </div>
         </section>
         <?php 

@@ -141,6 +141,101 @@ if ( $_POST['action'] == 'changeStse' ) {
 	}
 }
 
+if ( $_POST['action'] == 'changeCeleb' ) {
+	$id 		= $_POST['cid'];
+	$status 	= $_POST['st'];
+	$wheres[] 	= "id = '{$id}'";
+	$where		= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "UPDATE tbl_celeds
+				SET is_selected = '{$status}'
+				{$where}";
+
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
+if ( $_POST['action'] == 'changeInno' ) {
+	$id 		= $_POST['ids'];
+	$status 	= $_POST['inno'];
+	$wheres[] 	= "id = '{$id}'";
+	$where		= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "UPDATE tbl_service
+				SET is_innovation = '{$status}'
+				{$where}";
+
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
+if ( $_POST['action'] == 'changeSele' ) {
+	$id 		= $_POST['seid'];
+	$status 	= $_POST['st'];
+	$wheres[] 	= "id = '{$id}'";
+	$where		= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "UPDATE tbl_service
+				SET is_selected = '{$status}'
+				{$where}";
+
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
+if ( $_POST['action'] == 'changePromo' ) {
+	$id 		= $_POST['pmid'];
+	$status 	= $_POST['st'];
+	$wheres[] 	= "id = '{$id}'";
+	$where		= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "UPDATE tbl_promotion
+				SET is_selected = '{$status}'
+				{$where}";
+
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
+if ( $_POST['action'] == 'changebefore' ) {
+	$id 		= $_POST['bid'];
+	$status 	= $_POST['st'];
+	$wheres[] 	= "id = '{$id}'";
+	$where		= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "UPDATE tbl_before_after_detail
+				SET is_selected = '{$status}'
+				{$where}";
+
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
 if ( $_POST['action'] == 'delService' ) {
 	$sql = "UPDATE tbl_service SET is_active = '0' WHERE id = {$_POST['pid']}";
 	$result = query($sql);
@@ -193,7 +288,109 @@ if ( $_POST['action'] == 'delCustomer' ) {
 		echo 'false';
 	}
 }
+//เริ่มลบหน้า banner_home
+if ( $_POST['action'] == 'delbanner' ) {
+	$sql = "UPDATE tbl_banner SET is_active = '0' WHERE id  = {$_POST['banner_detail']}";
+	$result = query($sql);
 
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า banner_home
+
+//เริ่มลบหน้า vdo_home
+if ( $_POST['action'] == 'delvdohome' ) {
+	$sql = "UPDATE tbl_reviews SET is_active = '0' WHERE id  = {$_POST['vdo_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า vdo_home
+
+//เริ่มลบหน้า review
+if ( $_POST['action'] == 'delreview' ) {
+	$sql = "UPDATE tbl_reviews_detail SET is_active = '0' WHERE id  = {$_POST['review_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า review
+
+//เริ่มลบหน้า new
+if ( $_POST['action'] == 'delnew' ) {
+	$sql = "UPDATE tbl_service SET is_active = '0' WHERE id  = {$_POST['news_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า new
+
+//เริ่มลบหน้า bannerbe_af
+if ( $_POST['action'] == 'delbannerbe' ) {
+	$sql = "UPDATE tbl_banner_before_after SET is_active = '0' WHERE id  = {$_POST['bannerba_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า bannerbe_af
+
+//เริ่มลบหน้า befoer_after
+if ( $_POST['action'] == 'delbefoerafter' ) {
+	$sql = "UPDATE tbl_before_after_detail SET is_active = '0' WHERE id  = {$_POST['befoer_after_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า befoer_after
+
+//เริ่มลบหน้า promotion_id
+if ( $_POST['action'] == 'delpromotion' ) {
+	$sql = "UPDATE tbl_promotion SET is_active = '0' WHERE id  = {$_POST['promotion_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า promotion_id
+
+//เริ่มลบหน้า celeb_id
+if ( $_POST['action'] == 'delceleds' ) {
+	$sql = "UPDATE tbl_celeds SET is_active = '0' WHERE id  = {$_POST['celeb_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า celeb_id
 
 
 ?>

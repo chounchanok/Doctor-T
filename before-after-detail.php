@@ -42,15 +42,25 @@
         <?php 
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
+            
+           
+        ?>
+        <?php 
+            include 'init.php';
+            $before_list_sh = befors_list_sh($_GET['id']);
+            $banner_befor_list = banner_before_list();
         ?>
         <section class="header-index">
             <div class="owl-slider">
                 <div id="banner-slidebefore" class="owl-carousel">
+                <?php foreach ($banner_befor_list as $banner_befor_detail) : ?>
                     <div class="item">
-                        <a href="">
+                        <img src="images/banner_beforafter/<?php echo $banner_befor_detail->id; ?>/<?php echo $banner_befor_detail->img_cover; ?>" class="img-responsive"/>
+                        <!-- <a href="">
                             <img src="images/teeth.jpg" class="img-responsive">
-                        </a>
+                        </a> -->
                     </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </section>
@@ -68,19 +78,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?autoplay=1&v=DRkbx_2ynOs">
-                            <img src="images/review.png" class="img-responsive">
-                        </a>
+                        <!-- <a class="popup-youtube" href="<?php echo $before_list_sh->link; ?>"> -->
+                            <img src="images/before_after/<?php echo $before_list_sh->id; ?>/<?php echo $before_list_sh->img_cover; ?>" class="img-responsive">
+                        <!-- </a> -->
                     </div>
                     <div class="col-lg-12">
                         <div class="detail-review">
-                            <h2>MISS NAJDKD JFASJFJKSHDH </h2>
+                            <h2><?php echo $before_list_sh->name; ?></h2>
                             <hr>
-                            <h5>รายงานการวิจัย ฉบับนี้เป็นหารนำเสนอข้อมูลที่ได้รวบรวมจากแหล่งต่างๆ ที่น่าเชื่อถือในเชิงวิเคราะห์ เพื่อต้องการเผยแพร่เพื่อประโยชน์ด้สนการแลกเปลี่ยนความรู้
-                                และประโยชน์แก่ส่วนรวม ไม่ได้เจตนาแนะนำข้อมูลเพื่อการวิจัยโรคหรือการรักษาโรค ตลอดจนไม่ใช่เพื่อการนำข้อมูลไปใช้ในเชิงพาณิชย์หรือเจตนาเอื้อ
-                                ผลประโยชน์ธุรกิจใดๆ ศูนย์วิจัยสุขภาพกรุงเทพ จึงไม่รับรองความถูกต้องครบถ้วน สมบูรณ์ และเป็นปัจจุบันของข้อมูลเกี่ยวกับยา โรค สาเหตุ อาการ
-                                วิธีการดูแลรักษา
-                            </h5>
+                            <h5><?php echo html_entity_decode($before_list_sh->dsc); ?></h5>
                         </div>
                     </div>
                 </div>

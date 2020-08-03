@@ -120,7 +120,7 @@
 			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $banner_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'banner_edit.php?id=<?php echo $banner_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
-			                  								<!-- <button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $service_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button> -->
+			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $banner_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
 			                  							</td> 
 			                  						</tr>
 			                  						<?php
@@ -179,7 +179,7 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="s_id" name="s_id">
+					<input type="hidden" id="banner_detail" name="banner_detail">
 					<button type="button" class="btn btn-success" onclick="deleteService()"><i class="fa fa-check"></i> Confirm</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
@@ -262,9 +262,9 @@
 		});
 	}
 
-	function delS(sid)
+	function delS(banner_detail)
     {
-    	$('#s_id').val(sid);
+    	$('#banner_detail').val(banner_detail);
     	$('#modaldelete').modal('show');
     }
 
@@ -273,7 +273,7 @@
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {sid:$('#s_id').val(), action:'delService'},
+		  	data 	: {banner_detail:$('#banner_detail').val(), action:'delbanner'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

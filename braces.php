@@ -42,6 +42,10 @@
             $current_file = basename(__FILE__,'.php');
             include 'header.php';
         ?>
+        <?php 
+            include 'init.php';
+            $randdoms_list = rands_list();
+        ?>
         <section class="braces-white">
             <div class="container">
                 <div class="row">
@@ -121,34 +125,21 @@
         <section class="detail-teeth margin-top-20 padding-bottom-30" id="defaultopen">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                    <?php foreach ($randdoms_list as $randdoms_detail) : ?>
+                    <div id="myList" class="col-lg-6 col-md-6">
+                    <a href="before-after-detail?id=<?php echo $randdoms_detail->id; ?>">
                         <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
+                            <img src="images/before_after/<?php echo $randdoms_detail->id; ?>/<?php echo $randdoms_detail->img_cover; ?>" class="img-responsive">
+                            <?php echo html_entity_decode($randdoms_detail->dsc); ?>
                         </div>
+                       </a> 
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="review-detail">
-                            <img src="images/review.png" class="img-responsive">
-                            <p>เมื่อทำเครื่องหมายในช่องนี้แสดงว่าข้าพเจ้าเต็มใจรับข้อมูลการจัดฟันด้วย Invisalign รวมถึงอีเมลเกี่ยวกับเคล็ดลับ</p>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
+                <!-- <input type="hidden" id="count_query" value="4" /> -->
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <button class="button-showmore">Show more</button>
+                        <button class="button-showmore" id="loadMore">Show more</button>
                     </div>
                 </div>
             </div>
@@ -167,6 +158,24 @@
     <script src="js/custom.js"></script>
     <script src="js/script.js"></script>
     <script>
+    // $(document).ready(function(){
+    //     $('.button-showmore').click(function(){
+    //         var start = $('#count_query').val();
+    //         var limit = 2;
+    //         $.ajax({
+    //             url: 'admin/ajaxquery_braces.php',
+    //             data: { 'start' : start , 'limit' : limit },
+    //             method: 'POST',
+    //             dataType: 'html',
+    //             success:function(resp){
+    //                 console.log(resp);
+    //                 $('.show_more').append(resp);
+    //                 $('#count_query').val( parseInt(start) + parseInt(limit) );
+    //             }
+    //         });
+    //         // console.log(start , limit);
+    //     });
+    // });
         $(function() {
             $('.popup-youtube').magnificPopup({
                 disableOn: 700,
@@ -176,6 +185,18 @@
                 preloader: false,
                 fixedContentPos: false,
             });
+        });
+    </script>
+    <script>
+        $(function () {
+                x = 4;
+                $('#myList div').slice(0, 4).show();
+                $('#loadMore').on('click', function (e) {
+                    console.log(e);
+                    e.preventDefault();
+                    x = x + 4;
+                    $('#myList div').slice(0, x).slideDown();
+                });
         });
     </script>
 </body>

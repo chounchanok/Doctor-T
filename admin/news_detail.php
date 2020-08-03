@@ -52,7 +52,9 @@
 
 	<?php $current_file = basename(__FILE__); ?>
 	<?php include 'header.php'; ?>
-	<?php $newsdetail_list = newsdetail_list(); ?>
+	<?php 
+		$newsdetail_list = newsdetail_list(); 
+	?>
 
 	<!-- Page -->
 	<div class="page">
@@ -85,7 +87,7 @@
 			                  				<!-- <table id="exampleTablePagination" data-toggle="table" data-url="../assets/data/bootstrap_table_test.json" data-query-params="queryParams" data-mobile-responsive="true" data-height="400" data-pagination="true" data-icon-size="outline" data-search="true" class="table table-hover" style="margin-top: -36px;"> -->
 			                    				<thead style="">
 			                    					<tr>
-			                    						<th style="" data-field="id" data-align="center">
+			                    						<th style="" data-field="id" data-align="center" data-width="120px">
 			                    							<div class="th-inner ">#</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
@@ -93,11 +95,19 @@
 			                    							<div class="th-inner ">Name</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
-			                    						<!-- <th style="" data-field="code">
-			                    							<div class="th-inner ">Description</div>
+			                    						<th style="" data-field="newscoll" data-align="center" data-width="120px">
+			                    							<div class="th-inner ">News Recommend</div>
 			                    							<div class="fht-cell"></div>
-			                    						</th> -->
-			                    						<th style="" data-field="">
+			                    						</th>
+														<th style="" data-field="innovation" data-align="center" data-width="120px">
+			                    							<div class="th-inner ">Essential Read</div>
+			                    							<div class="fht-cell"></div>
+			                    						</th>
+														<th style="" data-field="selected" data-align="center" data-width="120px">
+			                    							<div class="th-inner ">Select Showfooter</div>
+			                    							<div class="fht-cell"></div>
+			                    						</th>
+			                    						<th style="" data-field="" data-width="150px">
 			                    							<div class="th-inner ">Created</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
@@ -116,11 +126,31 @@
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
 			                  							<td style=""><?php echo $newsdetail_detail->name; ?></td>
-			                  							<!-- <td style=""><?php echo $newsdetail_detail->description; ?></td> -->
+			                  							<td style="">
+															<?php if ($newsdetail_detail->is_recommend == '1') : ?>
+																<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="StChange(<?php echo $newsdetail_detail->id; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
+															<?php else : ?>
+																<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="StChange(<?php echo $newsdetail_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
+															<?php endif; ?>
+														</td>
+														<td style="">
+															<?php if ($newsdetail_detail->is_innovation == '1') : ?>
+																<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="InnoChange(<?php echo $newsdetail_detail->id; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
+															<?php else : ?>
+																<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="InnoChange(<?php echo $newsdetail_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
+															<?php endif; ?>
+														</td>
+														<td style="">
+															<?php if ($newsdetail_detail->is_selected == '1') : ?>
+																<button class="btn btn-sm btn-success btn-icon btn-floating" type="button" onclick="showChange(<?php echo $newsdetail_detail->id; ?>, 0)"><i class="icon wb-check" aria-hidden="true"></i></button>
+															<?php else : ?>
+																<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="showChange(<?php echo $newsdetail_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
+															<?php endif; ?>
+														</td>
 			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $newsdetail_detail->create_date ) ); ?></td>
 			                  							<td>
-			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'newsdetail_edit.php?id=<?php echo $newsdetail_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
-			                  								<!-- <button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $newsdetail_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button> -->
+			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'news_detail_edit.php?id=<?php echo $newsdetail_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
+			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $newsdetail_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
 			                  							</td> 
 			                  						</tr>
 			                  						<?php
@@ -168,6 +198,46 @@
 		</div>
 	</div>
 
+	<div class="modal fade bs-example-modal-sm" id="modalChangeinno" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title" id="myModalLabel2">Change</h4>
+				</div>
+				<div class="modal-body">
+					<h4>คุณต้องการเปลี่ยนสถานะหรือไม่ ?</h4>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" id="inno_id" name="inno_id">
+					<input type="hidden" id="inStatus" name="inStatus">
+					<button type="button" class="btn btn-success" onclick="changeInno()"><i class="fa fa-check"></i> Confirm</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade bs-example-modal-sm" id="modalChangesele" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title" id="myModalLabel2">Change</h4>
+				</div>
+				<div class="modal-body">
+					<h4>คุณต้องการเปลี่ยนสถานะหรือไม่ ?</h4>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" id="sele_id" name="sele_id">
+					<input type="hidden" id="slStatus" name="slStatus">
+					<button type="button" class="btn btn-success" onclick="changeSele()"><i class="fa fa-check"></i> Confirm</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade bs-example-modal-sm" id="modaldelete" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
@@ -179,7 +249,7 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="s_id" name="s_id">
+					<input type="hidden" id="news_id" name="news_id">
 					<button type="button" class="btn btn-success" onclick="deleteService()"><i class="fa fa-check"></i> Confirm</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
@@ -239,11 +309,25 @@
 
 	<script type="text/javascript">
 
-	function sChange(sid, status)
+	function StChange(sid, status)
     {
     	$('#service_id').val(sid);
     	$('#sStatus').val(status)
     	$('#modalChange').modal('show');
+    }
+
+	function InnoChange(ids, status)
+    {
+    	$('#inno_id').val(ids);
+    	$('#inStatus').val(status)
+    	$('#modalChangeinno').modal('show');
+    }
+
+	function showChange(seid, status)
+    {
+    	$('#sele_id').val(seid);
+    	$('#slStatus').val(status)
+    	$('#modalChangesele').modal('show');
     }
 
     function changeSt()
@@ -262,9 +346,41 @@
 		});
 	}
 
-	function delS(sid)
+	function changeInno()
     {
-    	$('#s_id').val(sid);
+   		$.ajax({
+		  	type 	: 'POST',
+		  	url 	: 'funcQuery.php',
+		  	data 	: {ids:$('#inno_id').val(), inno:$('#inStatus').val(), action:'changeInno'},
+		  	success: function(data) {
+		        	if (data == 'true') {
+		        		location.reload();
+		        	} else {
+		        		console.log(data);
+		        	}        	
+		        }
+		});
+	}
+
+	function changeSele()
+    {
+   		$.ajax({
+		  	type 	: 'POST',
+		  	url 	: 'funcQuery.php',
+		  	data 	: {seid:$('#sele_id').val(), st:$('#slStatus').val(), action:'changeSele'},
+		  	success: function(data) {
+		        	if (data == 'true') {
+		        		location.reload();
+		        	} else {
+		        		console.log(data);
+		        	}        	
+		        }
+		});
+	}
+
+	function delS(news_id)
+    {
+    	$('#news_id').val(news_id);
     	$('#modaldelete').modal('show');
     }
 
@@ -273,7 +389,7 @@
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
-		  	data 	: {sid:$('#s_id').val(), action:'delService'},
+		  	data 	: {news_id:$('#news_id').val(), action:'delnew'},
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

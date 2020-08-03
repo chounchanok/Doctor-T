@@ -85,7 +85,7 @@
 			              	<form id="serviceAdd" name="serviceAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="title">Name</label>
-				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Service" required>
+				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Slide" required>
 				                </div>
 				                <!-- <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="short_desc">Short Description</label>
@@ -108,7 +108,7 @@
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>
-						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline"="window.location.href = 'banner.php';">
+						            <button type="button" class="btn btn-animate btn-animate-side btn-default btn-outline" onclick="window.location.href = 'banner.php';">
 						              	<span><i class="icon wb-close" aria-hidden="true"></i> Close</span>
 						            </button>
           						</div>
