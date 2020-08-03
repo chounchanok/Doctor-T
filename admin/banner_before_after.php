@@ -113,8 +113,13 @@
 			                  							<td style=""><?php echo $banner_before_after_detail->name; ?></td>
 			                  							<td style=""><?php echo date("d/m/Y H:i:s", strtotime( $banner_before_after_detail->create_date ) ); ?></td>
 			                  							<td>
+<<<<<<< HEAD
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'banner_before_after_edit.php?id=<?php echo $banner_before_after_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
 			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $banner_before_after_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
+=======
+			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'banner_before_after_edit.php?id=<?php echo $banner_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
+			                  								<!-- <button type="button" class="btn btn-round btn-danger btn-sm" onclick="delS(<?php echo $service_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button> -->
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 			                  							</td> 
 			                  						</tr>
 			                  						<?php

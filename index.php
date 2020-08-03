@@ -135,7 +135,11 @@
                                                     <div class="col-md-5">
                                                         <div class="img-shadow">
                                                             <a class="popup-youtube"
+<<<<<<< HEAD
                                                                 href="<?php echo $_frame->link; ?>">
+=======
+                                                                href="<?php echo $_frame->link; ?>&mute=1&autoplay=1&loop=1&rel=0&controls=1">
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 
                                                             <img src="images/reviews/<?php echo $_frame->id; ?>/<?php echo $_frame->img_cover; ?>" class="img-responsive">
                                                             </a>
@@ -145,7 +149,11 @@
                                                         <div class="detail-index-slide">
                                                             <h2><?php echo $_frame->name; ?></h2>
                                                             <h1>Father Biondi</h1>
+<<<<<<< HEAD
                                                             <h4><?php echo html_entity_decode($_frame->desc); ?></h4>
+=======
+                                                            <h4><?php echo $_frame->desc; ?></h4>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                                                             <hr>
                                                         </div>
                                                         <button class="button-readmore-index-2">Read more>></button>

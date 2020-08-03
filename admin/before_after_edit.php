@@ -106,7 +106,11 @@
 									<?php $categories_list = categories_list(); ?>
 									<select class="form-control" name="categories">
 									<?php foreach ($categories_list as $categories_detail) : ?>
+<<<<<<< HEAD
 										<option value="<?php echo $categories_detail->categories_id; ?>" <?php if($beforeafter_detail->categories == $categories_detail->categories_id){ echo 'selected'; } ?>><?php echo $categories_detail->categories_name; ?></option>
+=======
+										<option value="<?php echo $categories_detail->categories_id; ?>"><?php echo $categories_detail->categories_name; ?></option>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 									<?php endforeach ?>
 									</select>
 								</div>
@@ -119,7 +123,11 @@
 								</div>
 								<div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="link_youtube">Link Youtube</label>
+<<<<<<< HEAD
 				                  	<input type="text" class="form-control" id="link_youtube" name="link_youtube" value="<?php echo $beforeafter_detail->link; ?>">
+=======
+				                  	<input type="text" class="form-control" id="link_youtube" name="link_youtube" value="<?php echo $beforeafter_detail->link; ?>" required>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 				                </div>
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Images Cover</label>

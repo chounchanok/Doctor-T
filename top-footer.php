@@ -1,12 +1,19 @@
 
 <?php 
     require_once('init.php');
+<<<<<<< HEAD
     $topfooter_celeb_list = celeb_topfooter_list();
     $topfooter_before_list = before_topfooter_list();
     $topfooter_newsdetail_list = newsdetail_topfooter_list();
     $topfooter_promotion_list = promotion_topfooter_list();
 ?>
 <section class="topfooter">
+=======
+    $review_detail1 = review_detail_list();
+?>
+
+    <section class="topfooter">
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
         <div class="container">
             <div class="row padding-bottom-15">
                 <div class="col-lg-12">

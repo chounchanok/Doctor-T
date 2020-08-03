@@ -293,6 +293,7 @@ if ( $_POST['action'] == 'delbanner' ) {
 	$sql = "UPDATE tbl_banner SET is_active = '0' WHERE id  = {$_POST['banner_detail']}";
 	$result = query($sql);
 
+<<<<<<< HEAD
 	if ($result) {
 		echo 'true';
 	} else {
@@ -391,6 +392,45 @@ if ( $_POST['action'] == 'delceleds' ) {
 	}
 }
 //จบลบหน้า celeb_id
+=======
+//เริ่มลบหน้า review/success story
+if ( $_POST['action'] == 'delreview' ) {
+	$sql = "UPDATE tbl_reviews_detail SET is_active = '0' WHERE id = {$_POST['review_id']}";
+	$result = query($sql);
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า review/success story
+
+//เริ่มลบหน้า beforeafter
+if ( $_POST['action'] == 'delbeforeafter' ) {
+	$sql = "UPDATE tbl_before_after_detail SET is_active = '0' WHERE id = {$_POST['beforeafter_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า review/success story
+
+//เริ่มลบหน้า categories
+if ( $_POST['action'] == 'delCategories' ) {
+	$sql = "UPDATE tbl_categories SET is_active = '0' WHERE categories_id = {$_POST['cate_id']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+//จบลบหน้า categories
 
 ?>

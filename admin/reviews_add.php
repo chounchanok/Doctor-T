@@ -189,7 +189,7 @@
 				
 				return myXhr;
 			}
-			,url		: uploadUrl + '?action=upload_image&path=product'
+			,url		: uploadUrl + '?action=upload_image&path=reviews'
 			,cache		: false
 			,contentType: false
 			,processData: false

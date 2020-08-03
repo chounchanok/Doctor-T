@@ -63,7 +63,11 @@
 
 		// print_r(service_edit());
 		// exit;
+<<<<<<< HEAD
 		if(review_edit_detail())
+=======
+		if(review_edit())
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 		{
 			echo '<script>
 			     alert("แก้ไขข้อมูลสำเร็จ");
@@ -79,7 +83,14 @@
 		exit;
 	}
 	
+<<<<<<< HEAD
 	$review_detail = reviews_edit($_GET['id']);
+=======
+
+
+	
+	$review_detail = review_detail($_GET['id']);
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 
 	?>
 
@@ -91,7 +102,11 @@
 					<!-- Panel Static Labels -->
 		          	<div class="panel">
 			            <div class="panel-heading">
+<<<<<<< HEAD
 			              <h3 class="panel-title">News Edit</h3>
+=======
+			              <h3 class="panel-title">Review Edit</h3>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 			            </div>
 			            <div class="panel-body container-fluid">
 			              	<form id="serviceAdd" name="serviceAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
@@ -99,13 +114,18 @@
 				                  	<label class="form-control-label" for="title">Name</label>
 				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $review_detail->name; ?>" required>
 				                </div>
+<<<<<<< HEAD
 				                
+=======
+	
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description</label>
 									<textarea class="form-control summernote" rows="4" id="description" name="description">
 										<?php echo $review_detail->dsc; ?>
 									</textarea>
 								</div>
+<<<<<<< HEAD
 
 								
 								<div class="form-group form-material" data-plugin="formMaterial">
@@ -116,6 +136,15 @@
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Image</label>
 			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/review_detail/' . $review_detail->id . '/' . $review_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
+=======
+								<div class="form-group form-material" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="short_desc">Link Youtube</label>
+				                  	<input type="text" class="form-control" id="link_youtube" name="link_youtube" value="<?php echo $review_detail->link; ?>" required>
+				                </div>
+								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="image">Images Cover</label>
+			                      	<input type="file" id="covImg" name="covImg" data-plugin="dropify" data-default-file="<?php echo '../images/review_detail/' . $review_detail->id . '/'.$review_detail->img_cover; ?>" data-allowed-file-extensions="png jpg"/>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 									<p class="help-block"><i>Image size: 1400x600px</i></p>
 				                </div>
 				                <div class="text-right">

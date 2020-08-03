@@ -108,7 +108,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+<<<<<<< HEAD
                         <iframe class="video-width" src="https://www.youtube.com/embed/DRkbx_2ynOs?autoplay=1" allow="autoplay" frameborder="0" allowfullscreen> </iframe>
+=======
+                                                         
+                        <iframe class="video-width" src="https://www.youtube.com/embed/DRkbx_2ynOs?&autoplay=1&loop=1&rel=0&controls=1&mute=0" allow="autoplay" frameborder="0" allowfullscreen> </iframe>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                     </div>
                 </div>
             </div>

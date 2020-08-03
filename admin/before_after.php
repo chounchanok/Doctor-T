@@ -93,10 +93,17 @@
 			                    							<div class="th-inner ">Name</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
+<<<<<<< HEAD
 			                    						<th style="" data-field="recommend" data-align="center">
 			                    							<div class="th-inner ">Selected</div>
 			                    							<div class="fht-cell"></div>
 			                    						</th>
+=======
+			                    						<!-- <th style="" data-field="recommend" data-align="center">
+			                    							<div class="th-inner ">Recommend</div>
+			                    							<div class="fht-cell"></div>
+			                    						</th> -->
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 														<!-- <th style="" data-field="cate">
 			                    							<div class="th-inner ">categories</div>
 			                    							<div class="fht-cell"></div>
@@ -120,6 +127,7 @@
 			                  						<tr> 
 			                  							<td class=""><?php echo $i+1; ?></td> 
 			                  							<td style=""><?php echo $product_detail->name; ?></td>
+<<<<<<< HEAD
 												
 			                  							<td style="">
 			                  								<?php if ($product_detail->is_selected== '1') : ?>
@@ -128,6 +136,9 @@
 			                  									<button class="btn btn-sm btn-danger btn-icon btn-floating" type="button" onclick="baChange(<?php echo $product_detail->id; ?>, 1)"><i class="icon wb-close" aria-hidden="true"></i></button>
 			                  								<?php endif; ?>
 			                  							</td>
+=======
+
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 			                  							<td style=""><?php echo date("d/m/Y", strtotime( $product_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'before_after_edit.php?id=<?php echo $product_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
@@ -170,9 +181,15 @@
 					<h4>คุณต้องการเปลี่ยนสถานะหรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
+<<<<<<< HEAD
 					<input type="hidden" id="befor_id" name="befor_id">
 					<input type="hidden" id="beStatus" name="beStatus">
 					<button type="button" class="btn btn-success" onclick="changeBe()"><i class="fa fa-check"></i> Confirm</button>
+=======
+					<input type="hidden" id="product_id" name="product_id">
+					<input type="hidden" id="pmStatus" name="pmStatus">
+					<button type="button" class="btn btn-success" onclick="changeSt()"><i class="fa fa-check"></i> Confirm</button>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -190,8 +207,13 @@
 					<h4>คุณต้องการลบสิ่งนี้หรือไม่ ?</h4>
 				</div>
 				<div class="modal-footer">
+<<<<<<< HEAD
 					<input type="hidden" id="befoer_after_id" name="befoer_after_id">
 					<button type="button" class="btn btn-success" onclick="deleteProduct()"><i class="fa fa-check"></i> Confirm</button>
+=======
+					<input type="hidden" id="beforeafter_id" name="beforeafter_id">
+					<button type="button" class="btn btn-success" onclick="deletebeforeafter()"><i class="fa fa-check"></i> Confirm</button>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -250,6 +272,7 @@
 
 	<script type="text/javascript">
 
+<<<<<<< HEAD
 	function baChange(bid, status)
     {
     	$('#befor_id').val(bid);
@@ -258,11 +281,25 @@
     }
 
     function changeBe()
+=======
+	function pdChange(pid, status)
+    {
+    	$('#product_id').val(pid);
+    	$('#pmStatus').val(status)
+    	$('#modalChange').modal('show');
+    }
+
+    function changeSt()
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
     {
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
+<<<<<<< HEAD
 		  	data 	: {bid:$('#befor_id').val(), st:$('#beStatus').val(), action:'changebefore'},
+=======
+		  	data 	: {pid:$('#product_id').val(), st:$('#pmStatus').val(), action:'changeStpm'},
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();
@@ -273,6 +310,7 @@
 		});
 	}
 
+<<<<<<< HEAD
 	function delP(befoer_after_id)
     {
     	$('#befoer_after_id').val(befoer_after_id);
@@ -280,11 +318,24 @@
     }
 
      function deleteProduct()
+=======
+	function delP(beforeafter_id)
+    {
+    	$('#beforeafter_id').val(beforeafter_id);
+    	$('#modaldelete').modal('show');
+    }
+
+     function deletebeforeafter()
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
     {
    		$.ajax({
 		  	type 	: 'POST',
 		  	url 	: 'funcQuery.php',
+<<<<<<< HEAD
 		  	data 	: {befoer_after_id:$('#befoer_after_id').val(), action:'delbefoerafter'},
+=======
+		  	data 	: {beforeafter_id:$('#beforeafter_id').val(), action:'delbeforeafter'},
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 		  	success: function(data) {
 		        	if (data == 'true') {
 		        		location.reload();

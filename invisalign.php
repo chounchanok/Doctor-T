@@ -187,16 +187,28 @@
             <div class="container">       
                 <div class="row">
                 <?php foreach ($befor_eng_list as $before_eng_detail) : ?>
+<<<<<<< HEAD
                     <div id="myList" class="col-lg-6 col-md-6">
                         <a href="before-after-detail?id=<?php echo $before_eng_detail->id; ?>">
                         <div class="review-detail">
                             <img src="images/before_after/<?php echo $before_eng_detail->id; ?>/<?php echo $before_eng_detail->img_cover; ?>" class="img-responsive">
                             <?php echo html_entity_decode($before_eng_detail->dsc); ?>
+=======
+                    <div class="col-lg-6 col-md-6">
+                        <div class="review-detail">
+                            <img src="images/before_after/<?php echo $before_eng_detail->id; ?>/<?php echo $before_eng_detail->img_cover; ?>" class="img-responsive">
+                            <p><?php echo $before_eng_detail->dsc; ?></p>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                         </div>
                        </a> 
                     </div>
+<<<<<<< HEAD
                     <?php endforeach ?> 
                 </div>            
+=======
+                    <?php endforeach ?>
+                </div>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <button class="button-showmore" id="loadMore">Show more</button>

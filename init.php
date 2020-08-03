@@ -119,6 +119,7 @@ function review_detail_list()
 	$sql	= "SELECT *
 				FROM tbl_reviews_detail
 				WHERE is_active = '1'
+<<<<<<< HEAD
 				ORDER BY id ASC";
 	
 	return query($sql);
@@ -147,6 +148,9 @@ function celebids_list()
 	$sql	= "SELECT *
 				FROM tbl_celeds
 				WHERE is_active = '1' ";
+=======
+				ORDER BY id ASC LIMIT 6 ";
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 	
 	return query($sql);
 }
@@ -166,6 +170,7 @@ function review_detail_list_wh($id)
 	return (!empty($result)) ? current($result) : false;
 }
 
+<<<<<<< HEAD
 function news__list_sh($id)
 {	
 	$wheres[] = "id = '{$id}'";
@@ -211,6 +216,8 @@ function celeb_list_sh($id)
 	return (!empty($result)) ? current($result) : false;
 }
 
+=======
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 function banner_before_list()
 {
 	$sql	= "SELECT *
@@ -296,7 +303,11 @@ function before_eng_list()
 	$sql	= "SELECT *
 				FROM tbl_before_after_detail
 				WHERE is_active = '1' AND categories = 8
+<<<<<<< HEAD
 				ORDER BY id ASC ";
+=======
+				ORDER BY id ASC";
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 	
 	return query($sql);
 }
@@ -311,6 +322,7 @@ function before_ning_list()
 	return query($sql);
 }
 
+<<<<<<< HEAD
 function rands_list()
 {
 	$sql	= "SELECT * FROM `tbl_before_after_detail` WHERE categories <> 8 AND categories <> 9 ORDER BY RAND( )";
@@ -325,6 +337,8 @@ function rands_before_list()
 	return query($sql);
 }
 
+=======
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 function reviews_list()
 {
 	$sql	= "SELECT *

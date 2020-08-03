@@ -119,7 +119,11 @@
 			                  							<td style=""><?php echo date("d/m/Y", strtotime( $review_detail_detail->create_date ) ); ?></td>
 			                  							<td>
 			                  								<button type="button" class="btn btn-round btn-warning btn-sm" onclick="window.location.href = 'review_detail_edit.php?id=<?php echo $review_detail_detail->id; ?>';"><i class="icon wb-pencil" aria-hidden="true"></i></button>
+<<<<<<< HEAD
 			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delP(<?php echo $review_detail_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
+=======
+			                  								<button type="button" class="btn btn-round btn-danger btn-sm" onclick="delr(<?php echo $review_detail_detail->id; ?>)"><i class="icon wb-close" aria-hidden="true"></i></button>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 			                  							</td> 
 			                  						</tr>
 			                  						<?php
@@ -147,7 +151,11 @@
 	
 	<?php include 'footer.php'; ?>
 
+<<<<<<< HEAD
 	<div class="modal fade bs-example-modal-sm" id="modalChange" tabindex="-1" role="dialog" aria-hidden="true">
+=======
+	<!-- <div class="modal fade bs-example-modal-sm" id="modalChange" tabindex="-1" role="dialog" aria-hidden="true">
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -165,7 +173,11 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 	</div>
+=======
+	</div> -->
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 
 	<div class="modal fade bs-example-modal-sm" id="modaldelete" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
@@ -179,7 +191,11 @@
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="review_id" name="review_id">
+<<<<<<< HEAD
 					<button type="button" class="btn btn-success" onclick="deleteReview()"><i class="fa fa-check"></i> Confirm</button>
+=======
+					<button type="button" class="btn btn-success" onclick="deletereview()"><i class="fa fa-check"></i> Confirm</button>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -238,6 +254,7 @@
 
 	<script type="text/javascript">
 
+<<<<<<< HEAD
 	function pdChange(pid, status)
     {
     	$('#product_id').val(pid);
@@ -262,12 +279,42 @@
 	}
 
 	function delP(review_id)
+=======
+	// function pdChange(pid, status)
+    // {
+    // 	$('#product_id').val(pid);
+    // 	$('#pmStatus').val(status)
+    // 	$('#modalChange').modal('show');
+    // }
+
+    // function changeSt()
+    // {
+   	// 	$.ajax({
+	// 	  	type 	: 'POST',
+	// 	  	url 	: 'funcQuery.php',
+	// 	  	data 	: {pid:$('#product_id').val(), st:$('#pmStatus').val(), action:'changeStpm'},
+	// 	  	success: function(data) {
+	// 	        	if (data == 'true') {
+	// 	        		location.reload();
+	// 	        	} else {
+	// 	        		console.log(data);
+	// 	        	}        	
+	// 	        }
+	// 	});
+	// }
+
+	function delr(review_id)
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
     {
     	$('#review_id').val(review_id);
     	$('#modaldelete').modal('show');
     }
 
+<<<<<<< HEAD
      function deleteReview()
+=======
+     function deletereview()
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
     {
    		$.ajax({
 		  	type 	: 'POST',

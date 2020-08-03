@@ -61,6 +61,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+<<<<<<< HEAD
                         <?php 
                             $ck_vdo = $review_detail1_wh->link;
                             if($ck_vdo == TRUE){
@@ -78,12 +79,21 @@
                             </div>
                         <?php }else{ ?>
                         <img src="images/review_detail/<?php echo $review_detail1_wh->id; ?>/<?php echo $review_detail1_wh->img_cover; ?>" class="img-responsive">
+=======
+                        <a class="popup-youtube" href="<?php echo $review_detail1_wh->link; ?>">
+                            <img src="images/review_detail/<?php echo $review_detail1_wh->id; ?>/<?php echo $review_detail1_wh->img_cover; ?>" class="img-responsive">
+                        </a>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                     </div>
                     <div class="col-lg-12">
                         <div class="detail-review">
                             <h2><?php echo $review_detail1_wh->name; ?></h2>
                             <hr>
+<<<<<<< HEAD
                             <h5><?php echo html_entity_decode($review_detail1_wh->dsc); ?></h5>
+=======
+                            <h5><?php echo $review_detail1_wh->dsc; ?></h5>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                         </div>
                     </div>
                 </div>
@@ -97,21 +107,36 @@
                     </div>
                     <?php foreach ($review_detail1 as $review_list) : ?>
                     <div class="col-lg-4 col-md-6">
+<<<<<<< HEAD
                             <!-- <a class="popup-youtube" href="<?php echo $review_list->link; ?>"> -->
                                 <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
                             <!-- </a> -->
+=======
+                    
+                            <a class="popup-youtube" href="<?php echo $review_list->link; ?>">
+                                <img src="images/review_detail/<?php echo $review_list->id; ?>/<?php echo $review_list->img_cover; ?>" class="img-responsive">
+                            </a>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                             <a href="review-detail?id=<?php echo $review_list->id; ?>">
                             <div class="content-review">
                                 <h4><?php echo $review_list->name; ?></h4>
                                 <hr>
+<<<<<<< HEAD
                                 <?php echo html_entity_decode($review_list->dsc); ?>
+=======
+                                <p><?php echo $review_list->dsc; ?></p>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                             </div>
                         </a>
                     </div>
                     <?php endforeach ?>
 
                     <div class="col-lg-12 text-center">
+<<<<<<< HEAD
                         <a class="button-showmore" href="review"><< BACK</a>
+=======
+                        <a class="button-showmore" href="review"><< Back</a>
+>>>>>>> 861605f35ecee4ac9580d22d220a1a966c2160e0
                     </div>
                 </div>
             </div>
